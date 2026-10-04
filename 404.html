@@ -1,1 +1,1506 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Good Rating</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/"><style>body{background:#05060f;color:#fff;font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#60a5fa}</style></head><body><p>Page not found. <a href="/">Go to the homepage</a></p></body></html>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found | Good Rating</title>
+<meta name="description" content="The page you opened is not on this site. Find Google review removal, guides by review type and by industry, or message Good Rating on WhatsApp for help.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Good Rating">
+<meta property="og:title" content="Page Not Found | Good Rating">
+<meta property="og:description" content="The page you opened is not on this site. Find Google review removal, guides by review type and by industry, or message Good Rating on WhatsApp for help.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ur_PK">
+<meta property="og:image" content="https://goodrating.net/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Good Rating: we report fake Google reviews, you pay only for reviews that get removed">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://goodrating.net/og-image.png">
+<meta name="twitter:title" content="Page Not Found | Good Rating">
+<meta name="twitter:description" content="The page you opened is not on this site. Find Google review removal, guides by review type and by industry, or message Good Rating on WhatsApp for help.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23000'/%3E%3Cpath fill='%23FFB020' d='M50 10 60.3 37.2 89.4 38.6 66.7 56.8 74.3 84.9 50 69 25.7 84.9 33.3 56.8 10.6 38.6 39.7 37.2Z'/%3E%3Cpath d='M33 54 45.5 66.5 70 37' fill='none' stroke='%23000' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&family=Smooch+Sans:wght@800&family=Red+Hat+Display:wght@500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&text=GODRATIN&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&text=%D8%A7%D8%B1%D8%AF%D9%88&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://goodrating.net/#org","name":"Good Rating","url":"https://goodrating.net/","description":"Google review removal for business owners and agencies. We report reviews that break Google's rules, and clients pay only for reviews that get removed.","founder":{"@type":"Person","@id":"https://goodrating.net/#founder","name":"Arslan Zafar","jobTitle":"Founder and Owner"},"numberOfEmployees":{"@type":"QuantitativeValue","minValue":12},"address":{"@type":"PostalAddress","addressCountry":"PK"},"knowsLanguage":["en","ur"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://wa.me/923462662763","availableLanguage":["English","Urdu"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:30","closes":"19:00"}}},{"@type":"WebSite","@id":"https://goodrating.net/#website","url":"https://goodrating.net/","name":"Good Rating","publisher":{"@id":"https://goodrating.net/#org"},"inLanguage":"en"}]}</script>
+<style>
+/* =====================================================================
+   Good Rating v3 design system: tokens, reset, type, buttons, layout,
+   header, off canvas menu, footer, floating WhatsApp button, accordion.
+   Inlined into every page by src/build.py. Prefix: gr-
+   Never use a class that contains "row-" or "col-".
+   ===================================================================== */
+
+/* ---------- tokens ---------- */
+:root{
+  /* THE accent. Good Rating blue (the RATING half of the wordmark).
+     Change this one value (space separated RGB) to re colour every button, eyebrow, check and highlight. */
+  --accent-rgb:96 165 250;
+
+  --accent:rgb(var(--accent-rgb));
+  --accent-12:rgb(var(--accent-rgb) / .12); --accent-16:rgb(var(--accent-rgb) / .16); --accent-24:rgb(var(--accent-rgb) / .24);
+  --accent-28:rgb(var(--accent-rgb) / .28); --accent-40:rgb(var(--accent-rgb) / .4); --accent-45:rgb(var(--accent-rgb) / .45);
+  --accent-55:rgb(var(--accent-rgb) / .55); --accent-60:rgb(var(--accent-rgb) / .6);
+  --accent-hover:color-mix(in srgb,var(--accent) 38%,#0A2A9E);   /* button hover: a deeper blue of the same hue */
+  --accent-on-light:color-mix(in srgb,var(--accent) 38%,#0A2A9E); /* the accent on white: ticks, links, focus (6:1 on #FFF) */
+  --accent-ink:#0E1626;                                            /* text on accent fills */
+
+  --font-display:'Smooch Sans',Impact,'Arial Narrow Bold',sans-serif;
+  --font-body:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-alt:'Red Hat Display','Archivo',sans-serif;
+  --font-script:'Caveat',cursive;
+  --font-mark:'Montserrat','Archivo',sans-serif;
+
+  --black:#000; --ink:#19191C; --ink-2:#232326; --ink-3:#333339; --ink-900:#0F1012; --ink-950:#0E0E10;
+  --footer-end:#0C0C0E; --white:#FFF; --gray-100:#F3F3F3; --gray-50:#F6F6F6; --band:#EEF1F6;
+  --star:#FFB020; --wa:#25D366; --good:#62D17B; --bad:#F87171;
+
+  --text-body:#464747; --text-strong:#19191C; --text-muted:#828282; --text-eyebrow:#ADB5BD; --text-eyebrow-2:#6C757D;
+  --text-footline:#A3A3A8; --on-dark-78:rgba(255,255,255,.78); --on-dark-72:rgba(255,255,255,.72);
+  --on-dark-70:rgba(255,255,255,.7); --on-dark-62:rgba(255,255,255,.62);
+
+  --line-d-10:rgba(255,255,255,.1); --line-d-12:rgba(255,255,255,.12); --line-d-20:rgba(255,255,255,.2);
+  --line-d-50:rgba(255,255,255,.5); --line-d-55:rgba(255,255,255,.55); --line-l-20:rgba(0,0,0,.2); --line-l-12:rgba(0,0,0,.12);
+
+  --grad-hero:linear-gradient(#19191C 30.2%,#232326 91%,#333339 142.92%);
+  --grad-card:linear-gradient(#1A1B1F 0%,#121316 100%);
+  --grad-box:linear-gradient(120deg,#17181C 0%,#101114 100%);
+  --grad-tile:radial-gradient(120% 140% at 15% 0%,#23262B 0%,#141518 55%,#0E0F11 100%);
+  --grad-cta:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 1px,transparent 1px 16px),linear-gradient(135deg,#131418 0%,#232326 100%);
+  --stripes:repeating-linear-gradient(135deg,#fff 0 5px,transparent 5px 21px);
+
+  --sh-btn:0 2px 4px rgba(0,0,0,.08); --sh-float:0 16px 48px rgba(0,0,0,.12); --sh-price:0 18px 40px rgba(0,0,0,.18);
+  --sh-video:0 18px 40px rgba(0,0,0,.45); --sh-card-hover:0 16px 32px rgba(0,0,0,.45); --sh-tile-hover:0 14px 30px rgba(0,0,0,.5);
+
+  --nav-h:84px; --sec-pad:32px; --hero-pad-top:105px; --hero-pad-bottom:32px; --head-gap:32px;
+
+  /* display type: Smooch Sans 800 drawn at 1.29x the reference px size, reference line heights */
+  --fs-hero:62px;  --lh-hero:49.92px;
+  --fs-h1:59.3px;  --lh-h1:55.2px;
+  --fs-h2:51.6px;  --lh-h2:48px;
+  --fs-h3:46.4px;  --lh-h3:43.2px;
+  --fs-tile:34.8px; --lh-tile:31px;
+
+  --fs-lead:16px; --lh-lead:24px; --fs-card-title:18px; --lh-card-title:21.6px; --fs-faq:16px; --lh-faq:19.2px;
+}
+@supports not (color:color-mix(in srgb,red 50%,blue)){:root{--accent-hover:#1D4ED8;--accent-on-light:#1D4ED8}}
+@media (min-width:992px){
+  :root{
+    --nav-h:73px; --sec-pad:64px; --hero-pad-top:169px; --hero-pad-bottom:96px; --head-gap:54px;
+    --fs-hero:124px; --lh-hero:99.84px;
+    --fs-h1:67px;    --lh-h1:62.4px;
+    --fs-h2:59.3px;  --lh-h2:55.2px;
+    --fs-h3:51.6px;  --lh-h3:48px;
+    --fs-tile:38.7px; --lh-tile:34px;
+    --fs-lead:18px; --lh-lead:27px; --fs-card-title:24px; --lh-card-title:28.8px; --fs-faq:18px; --lh-faq:21.6px;
+  }
+}
+
+/* ---------- base ---------- */
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav-h) + 12px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:#000}
+#gr-root{background:#000;color:var(--text-body);font:400 16px/24px var(--font-body);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;overflow-x:clip;text-rendering:optimizeLegibility}
+:where(#gr-root) *,:where(#gr-root) *::before,:where(#gr-root) *::after{box-sizing:border-box}
+:where(#gr-root) :where(img,svg){max-width:100%}
+:where(#gr-root) img{display:block;height:auto}
+:where(#gr-root) a{color:inherit;text-decoration:none}
+:where(#gr-root) :where(h1,h2,h3,h4,h5,p,figure,blockquote,dl,dd){margin:0}
+:where(#gr-root) :where(ul,ol){margin:0;padding:0;list-style:none}
+:where(#gr-root) button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+:where(#gr-root) :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* on white and light gray the light accent ring is too faint (2.5:1): use the deep accent there */
+:where(#gr-root) :where(.gr-on-light,.gr-bg-white,.gr-bg-gray,.gr-crumbs,.gr-ccard-sec) :focus-visible{outline-color:var(--accent-on-light)}
+.gr-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.gr-main{display:block}
+.gr-skip{position:fixed;inset-inline-start:12px;top:-80px;z-index:2000;padding:10px 16px;border-radius:6px;background:var(--accent);color:var(--accent-ink)!important;font:600 14px/20px var(--font-body);transition:top .2s}
+.gr-skip:focus{top:12px}
+.gr-ltr{direction:ltr;unicode-bidi:isolate}
+
+.gr-container{width:100%;max-width:1320px;margin:0 auto;padding:0 12px}
+@media (min-width:576px){.gr-container{max-width:540px}}
+@media (min-width:768px){.gr-container{max-width:720px}}
+@media (min-width:992px){.gr-container{max-width:960px}}
+@media (min-width:1200px){.gr-container{max-width:1140px}}
+@media (min-width:1400px){.gr-container{max-width:1320px}}
+@media (max-width:575.98px){.gr-container{padding:0 16px}}
+
+.gr-sec{position:relative;padding:var(--sec-pad) 0}
+.gr-bg-black{background:#000}.gr-bg-ink{background:var(--ink)}.gr-bg-900{background:var(--ink-900)}
+.gr-bg-white{background:#fff}.gr-bg-band{background:var(--band)}.gr-bg-hero{background:var(--grad-hero)}.gr-bg-gray{background:var(--gray-100)}
+
+/* ---------- type ---------- */
+.gr-display{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:normal;color:#fff;overflow-wrap:break-word;text-wrap:balance}
+/* Smooch Sans draws a small loose period: scale it to the stroke weight and tuck it in */
+.gr-pd{font-size:1.45em;line-height:0;margin-inline-start:-.065em;margin-inline-end:-.02em}
+.gr-h-hero{font-size:var(--fs-hero);line-height:var(--lh-hero)}
+.gr-h1{font-size:var(--fs-h1);line-height:var(--lh-h1)}
+.gr-h2{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+.gr-h3{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+.gr-on-light .gr-display,.gr-display.gr-dark{color:#000}
+.gr-kicker{display:block;font:600 16px/19.2px var(--font-body);text-transform:capitalize;color:var(--text-eyebrow);margin:0 0 16px}
+.gr-kicker--accent{color:var(--accent)}
+.gr-kicker--dark{color:var(--text-eyebrow-2)}
+.gr-kicker--caps{font:700 14px/21px var(--font-body);text-transform:uppercase;letter-spacing:.84px;color:var(--accent)}
+.gr-lead{font-size:var(--fs-lead);line-height:var(--lh-lead);color:#fff}
+.gr-body{font-size:15px;line-height:22.5px}
+.gr-head{max-width:636px;margin:0 auto;text-align:center}
+.gr-head--wide{max-width:760px}
+.gr-head--start{margin:0;text-align:start;max-width:900px}
+.gr-head .gr-display + .gr-lead,.gr-head .gr-display + .gr-body{margin-top:16px}
+.gr-head .gr-body{color:#fff}
+.gr-on-light .gr-head .gr-body,.gr-on-light .gr-head .gr-lead{color:var(--text-body)}
+.gr-gap-top{margin-top:var(--head-gap)}
+.gr-inlink{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color .2s}
+.gr-inlink:hover{color:#fff}
+.gr-on-light .gr-inlink{color:var(--accent-on-light)}
+.gr-on-light .gr-inlink:hover{color:#000}
+
+/* ---------- buttons ---------- */
+.gr-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px/22.5px var(--font-body);padding:12px 26px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:all .5s ease;isolation:isolate;cursor:pointer;text-align:center}
+.gr-btn:hover,.gr-btn:focus-visible{transition:.3s ease-in-out}
+.gr-btn svg{flex:0 0 auto;width:19px;height:19px}
+.gr-btn--accent{background:var(--accent);color:var(--accent-ink)!important;box-shadow:var(--sh-btn)}
+.gr-btn--accent::before{content:"";position:absolute;left:50%;top:50%;width:calc(100% + 10px);height:calc(100% + 10px);transform:translate(-50%,-50%);border-radius:8px;background:var(--accent-40);opacity:0;z-index:-1;transition:opacity .3s ease-in-out}
+.gr-btn--accent:hover,.gr-btn--accent:focus-visible{background:var(--accent-hover);color:#fff!important}
+.gr-btn--accent:hover::before,.gr-btn--accent:focus-visible::before{opacity:1}
+.gr-btn--outline{background:transparent;color:#fff!important;border:1px solid var(--line-d-50)}
+.gr-btn--outline::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(0deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.05) 100%);opacity:0;z-index:-1;transition:opacity .3s ease-in-out}
+.gr-btn--outline:hover::before,.gr-btn--outline:focus-visible::before{opacity:1}
+.gr-btn--outline-black{background:transparent;color:#000!important;border:1px solid #000}
+.gr-btn--outline-black:hover{background:rgba(0,0,0,.05)}
+.gr-btn--caps{text-transform:uppercase}
+.gr-btn--nav{padding:12px 18px}
+.gr-btn--footer{background:var(--accent);color:var(--accent-ink)!important;border-radius:8px;font:700 14px/21px var(--font-body);letter-spacing:.56px;text-transform:uppercase;padding:12px 22px;transition:transform .2s,filter .2s}
+.gr-btn--footer:hover{transform:translateY(-1px);filter:brightness(1.07)}
+.gr-plain{position:relative;display:inline-block;font:700 15px/22.5px var(--font-body);color:#000}
+.gr-plain::before{content:"";position:absolute;inset-inline:0;bottom:0;height:1px;background:currentColor}
+.gr-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.gr-btns--start{justify-content:flex-start}
+@media (max-width:575.98px){.gr-btns--stack{flex-direction:column;align-items:center}.gr-btns--stack .gr-btn{width:100%;max-width:300px}}
+
+/* ---------- brand: star mark + GOOD|RATING wordmark ---------- */
+.gr-logo{display:inline-flex;align-items:center;gap:9px;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.gr-logo svg{flex:0 0 auto;width:26px;height:26px}
+.gr-logo__word{font:800 19px/1 var(--font-mark);letter-spacing:.2px;text-transform:uppercase;color:#fff}
+.gr-logo__word b{font-weight:800;color:#fff}
+.gr-logo__word i{font-style:normal;color:var(--accent)}
+.gr-logo--lg svg{width:34px;height:34px}
+.gr-logo--lg .gr-logo__word{font-size:25px}
+.gr-mono{display:flex;align-items:center;justify-content:center;border-radius:14px;background:radial-gradient(120% 120% at 20% 0%,#2B2E34 0%,#16171A 58%,#0E0F11 100%);border:1px solid var(--accent-40);direction:ltr}
+.gr-mono span{font-family:'Smooch Sans',Impact,sans-serif;font-weight:800;line-height:1;letter-spacing:.5px;color:var(--accent);transform:translateY(3%)}
+
+/* ---------- header / nav ---------- */
+.gr-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:#000}
+.gr-nav__in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.gr-nav__logo{display:flex;align-items:center;flex:0 0 auto}
+.gr-nav__links{display:none;justify-content:center;gap:24px}
+.gr-nav__links a{font:400 13.6px/20.4px var(--font-body);color:#fff;padding:8px 0;transition:color .15s ease-in-out;white-space:nowrap}
+.gr-nav__links a:hover,.gr-nav__links a[aria-current="page"]{color:var(--accent)}
+.gr-nav__right{display:flex;align-items:center;gap:14px}
+.gr-nav__wa{display:none}
+.gr-nav__toggle{display:flex;align-items:center;justify-content:center;width:44px;height:48px;margin-inline-end:-6px;color:var(--accent)}
+.gr-nav__toggle svg{width:30px;height:30px}
+@media (min-width:576px){.gr-nav__wa{display:inline-flex}.gr-nav__right{gap:18px}}
+@media (min-width:992px){
+  .gr-nav__in{display:grid;grid-template-columns:auto 1fr auto;gap:24px}
+  .gr-nav__links{display:flex;gap:18px}
+  .gr-nav__toggle{display:none}
+  .gr-nav__right{gap:16px}
+}
+@media (min-width:1200px){.gr-nav__in{gap:40px}.gr-nav__links{gap:24px}.gr-nav__right{gap:20px}}
+/* dropdown group (desktop) */
+.gr-dd{position:relative;display:flex;align-items:center}
+.gr-dd__btn{display:inline-flex;align-items:center;gap:5px;font:400 13.6px/20.4px var(--font-body);color:#fff;padding:8px 0;transition:color .15s ease-in-out;white-space:nowrap}
+.gr-dd__btn svg{width:14px;height:14px;transition:transform .2s}
+.gr-dd__btn:hover,.gr-dd.is-open .gr-dd__btn{color:var(--accent)}
+.gr-dd.is-open .gr-dd__btn svg{transform:rotate(180deg)}
+.gr-dd__panel{position:absolute;top:calc(100% + 14px);left:50%;min-width:300px;transform:translate(-50%,6px);display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;padding:20px;border-radius:12px;background:#15171A;border:1px solid var(--line-d-12);box-shadow:0 16px 32px rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
+.gr-dd__panel::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.gr-dd.is-open .gr-dd__panel{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .18s ease,transform .18s ease}
+.gr-dd__panel a{display:block;padding:8px 12px;border-radius:6.4px;font:400 15.2px/19px var(--font-body);color:#fff;white-space:nowrap;transition:background .15s,color .15s}
+.gr-dd__panel a:hover,.gr-dd__panel a[aria-current="page"]{background:rgba(255,255,255,.08);color:var(--accent)}
+.gr-dd__panel--one{grid-template-columns:1fr;min-width:220px}
+
+/* EN | اردو segmented toggle */
+.gr-lang{display:inline-flex;align-items:center;height:36px;padding:3px;border:1px solid rgba(255,255,255,.22);border-radius:999px;direction:ltr;flex:0 0 auto}
+.gr-lang button{display:flex;align-items:center;justify-content:center;height:28px;min-width:40px;padding:0 11px;border-radius:999px;font:600 13px/1 var(--font-body);color:rgba(255,255,255,.72);transition:background .2s,color .2s;position:relative}
+.gr-lang button::after{content:"";position:absolute;inset:-8px -2px}
+.gr-lang button:hover{color:#fff}
+.gr-lang button[aria-pressed="true"]{background:var(--accent-16);color:var(--accent)}
+.gr-lang button[lang="ur"]{font:400 15px/1 'Noto Nastaliq Urdu',serif;padding-bottom:5px}
+
+@media (max-width:374.98px){
+  .gr-nav__in{gap:8px}.gr-nav__right{gap:6px}
+  .gr-nav__logo .gr-logo{gap:6px}.gr-nav__logo .gr-logo svg{width:21px;height:21px}.gr-nav__logo .gr-logo__word{font-size:15.5px}
+  .gr-lang button{min-width:34px;padding:0 8px}
+}
+
+/* off canvas */
+.gr-oc-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:1090}
+.gr-oc{position:fixed;top:0;bottom:0;inset-inline-end:0;width:335px;max-width:86vw;background:var(--ink);padding:24px 20px 32px;z-index:1100;overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .28s ease,visibility 0s linear .28s}
+[dir="rtl"] .gr-oc{transform:translateX(-100%)}
+.gr-oc.is-open{transform:none!important;visibility:visible;transition:transform .28s ease}
+.gr-oc-backdrop.is-open{opacity:1;pointer-events:auto}
+.gr-oc__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px}
+.gr-oc__close{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;margin-inline-end:-8px}
+.gr-oc__close svg{width:24px;height:24px}
+.gr-oc__links a,.gr-oc__label{display:block;font:600 18px/27px var(--font-body);color:#fff;padding:12px 0;transition:color .15s}
+.gr-oc__label{margin:0;color:var(--on-dark-62)}
+.gr-oc__links a:hover,.gr-oc__links a[aria-current="page"]{color:var(--accent)}
+.gr-oc__sub{margin:2px 0 8px;padding-inline-start:18px;border-inline-start:1px solid var(--line-d-20);display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.gr-oc__sub a{font:400 15px/21px var(--font-body);color:var(--on-dark-78);padding:8px 0}
+.gr-oc__btns{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:36px}
+.gr-oc__btns .gr-btn{min-width:220px}
+.gr-oc__meta{margin-top:26px;font:400 13px/19.5px var(--font-body);color:var(--on-dark-62)}
+.gr-oc__meta b{display:block;font-weight:600;color:#fff}
+html.gr-lock,html.gr-lock body{overflow:hidden}
+
+/* ---------- cards + badges shared by sections ---------- */
+.gr-card{background:var(--grad-card);border:1px solid var(--line-d-10);border-radius:16px}
+.gr-check{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--accent-12);border:1px solid var(--accent-45);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.gr-check svg{width:20px;height:20px}
+.gr-icon-circle{width:93px;height:93px;border-radius:50%;background:#000;border:1px solid var(--line-d-50);display:flex;align-items:center;justify-content:center;color:var(--accent);transition:border-color .3s}
+.gr-icon-circle svg{width:46px;height:46px}
+.gr-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;border:1px solid var(--accent-40);background:var(--accent-12);font:600 12.5px/17px var(--font-body);color:var(--accent);white-space:nowrap}
+.gr-chips{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- accordion (FAQ) ---------- */
+.gr-faq__list{max-width:636px;margin:40px auto 0}
+.gr-acc{border:1px solid var(--line-l-20);border-radius:8px;background:#fff}
+.gr-acc + .gr-acc{margin-top:16px}
+.gr-acc__q{display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px;padding:20px;text-align:start;font:600 var(--fs-faq)/var(--lh-faq) var(--font-body);color:var(--text-body)}
+.gr-acc__icon{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--accent);transform:rotate(180deg);transition:transform .3s ease}
+.gr-acc__icon svg{width:16px;height:16px}
+.gr-acc.is-open .gr-acc__icon{transform:rotate(0)}
+.gr-acc__a{height:0;overflow:hidden;transition:height .3s ease}
+.gr-acc__a > div{padding:0 20px 20px;font:400 15px/23px var(--font-body);color:var(--text-body)}
+.gr-acc__a > div p + p{margin-top:12px}
+/* dark variant */
+.gr-faq--dark .gr-acc{background:transparent;border-color:var(--line-d-20)}
+.gr-faq--dark .gr-acc__q{color:#fff}
+.gr-faq--dark .gr-acc__icon{background:#000;border:1px solid var(--line-d-20)}
+.gr-faq--dark .gr-acc__a > div{color:var(--on-dark-72)}
+
+/* ---------- CTA banner ---------- */
+.gr-cta{position:relative;overflow:hidden;background:var(--grad-hero);padding:var(--sec-pad) 0}
+.gr-cta::before{content:"";position:absolute;left:0;bottom:0;width:300px;height:220px;background:var(--stripes);opacity:.035;pointer-events:none;-webkit-mask-image:linear-gradient(45deg,#000 20%,transparent 75%);mask-image:linear-gradient(45deg,#000 20%,transparent 75%)}
+.gr-cta__box{position:relative;border-radius:16px;padding:48px 20px;background:var(--grad-cta);box-shadow:0 1px 0 rgba(255,255,255,.92),var(--sh-float);text-align:center}
+@media (min-width:992px){.gr-cta__box{padding:69px 82px}}
+.gr-cta__box .gr-display{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+.gr-cta__line{margin:16px auto 0;max-width:720px;font:600 15px/22.5px var(--font-body);color:#fff}
+.gr-cta__box .gr-btns{margin-top:30px}
+.gr-cta__meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:22px;font:400 13px/19.5px var(--font-body);color:var(--on-dark-70)}
+.gr-cta__meta span{display:inline-flex;align-items:center;gap:8px}
+.gr-cta__meta svg{width:15px;height:15px;color:var(--accent)}
+
+/* photo variant (reference: CTA banner with photo): white above / black below, a black box with the photo masked into it */
+.gr-cta--photo{background:linear-gradient(#fff 0,#fff 46%,#000 46%,#000 100%)}
+.gr-cta--photo::before{display:none}
+.gr-cta--photo .gr-cta__box{overflow:hidden;background:#000;padding:0 0 40px;box-shadow:0 1px 0 rgba(255,255,255,.92),var(--sh-float)}
+.gr-cta__photo{position:relative;height:210px;margin:0}
+.gr-cta__photo picture,.gr-cta__photo img{display:block;width:100%;height:100%}
+.gr-cta__photo img{object-fit:cover}
+.gr-cta__photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0,rgba(0,0,0,.4) 55%,#000 100%)}
+.gr-cta__txt{position:relative;z-index:1;padding:28px 20px 0}
+.gr-cta__splat{position:absolute;inset-inline-end:0;bottom:0;width:180px;height:82px;opacity:.85;pointer-events:none}
+[dir="rtl"] .gr-cta__splat{transform:scaleX(-1)}
+@media (min-width:992px){
+  .gr-cta--photo .gr-cta__box{display:flex;align-items:center;min-height:500px;padding:69px 82px;text-align:center}
+  .gr-cta__photo{position:absolute;inset-block:0;inset-inline-start:0;width:50%;height:auto}
+  .gr-cta__photo::after{background:radial-gradient(circle at 0 50%,transparent 0,#000 90%)}
+  [dir="rtl"] .gr-cta__photo::after{background:radial-gradient(circle at 100% 50%,transparent 0,#000 90%)}
+  .gr-cta--photo .gr-cta__txt{width:542px;max-width:calc(50% + 58px);margin-inline-start:auto;padding:0}
+  .gr-cta__splat{width:300px;height:136px}
+}
+
+/* ---------- footer ---------- */
+.gr-footer{background:#000;color:#fff}
+.gr-footer__top{display:flex;flex-direction:column;gap:40px;padding-top:48px;padding-bottom:48px}
+.gr-footer__brand{max-width:440px}
+.gr-footer__blurb{margin-top:19px;max-width:340px;font:400 13px/20.8px var(--font-body);color:#8A8B8C}
+.gr-footer__contact{display:flex;align-items:center;gap:16px;margin-top:42px}
+.gr-footer__contact > svg{flex:0 0 32px;width:32px;height:32px;color:var(--accent)}
+.gr-footer__contact small{display:block;font:400 13px/19.5px var(--font-body);color:var(--text-muted)}
+.gr-footer__contact a,.gr-footer__contact b{display:block;font:600 18px/27px var(--font-body);color:#fff;transition:color .2s}
+.gr-footer__contact b{font-size:15px;line-height:22px}
+.gr-footer__contact a:hover{color:var(--accent)}
+.gr-footer__contact + .gr-footer__contact{margin-top:22px}
+.gr-footer__menus{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px}
+.gr-footer__menus h4{font:900 18px/21.6px var(--font-body);text-transform:uppercase;color:#fff;margin:0 0 22px}
+.gr-footer__menus li + li{margin-top:14px}
+.gr-footer__menus a{font:400 15px/18px var(--font-body);color:#fff;transition:color .2s}
+.gr-footer__menus a:hover{color:var(--accent)}
+@media (min-width:992px){
+  .gr-footer__top{flex-direction:row;justify-content:space-between;gap:40px}
+  .gr-footer__brand{flex:0 0 440px}
+  .gr-footer__menus{display:flex;justify-content:flex-end;gap:72px;flex:0 1 746px}
+}
+.gr-footer__end{background:var(--footer-end);border-top:1px solid var(--text-body);padding:36px 0 24px}
+.gr-footer__bar{display:flex;flex-direction:column;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08)}
+.gr-footer__mini{display:flex;align-items:center;gap:14px}
+.gr-footer__mini p{font:400 13px/19.5px var(--font-body);color:var(--on-dark-70);max-width:240px}
+.gr-footer__endlinks{display:flex;flex-wrap:wrap;gap:10px 22px;max-width:460px}
+.gr-footer__endlinks a{font:600 14px/21px var(--font-body);color:var(--on-dark-78);transition:color .2s}
+.gr-footer__endlinks a:hover{color:var(--accent)}
+.gr-footer__cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.gr-footer__cta .gr-display{white-space:nowrap;font-family:'Smooch Sans',Impact,sans-serif;font-weight:800;font-size:33.5px;line-height:28px;color:#fff;padding-top:4px;direction:ltr;unicode-bidi:isolate;text-transform:none}
+.gr-footer__line{margin-top:22px;text-align:center;font:400 13px/19.5px var(--font-body);color:var(--text-footline)}
+.gr-footer__legal{margin:12px auto 0;max-width:760px;text-align:center;font:600 13px/19.5px var(--font-body);color:#C9CACC}
+.gr-footer__base{display:flex;flex-direction:column-reverse;align-items:center;gap:12px;margin-top:28px}
+.gr-footer__base p{font:400 12.56px/18.84px var(--font-body);color:var(--text-muted)}
+.gr-footer__base a{font:600 13px/19.5px var(--font-body);color:#fff;transition:color .2s}
+.gr-footer__base a:hover{color:var(--accent)}
+@media (min-width:992px){
+  .gr-footer__bar{flex-direction:row;align-items:center;justify-content:space-between;gap:40px}
+  .gr-footer__cta{align-items:flex-end}
+  .gr-footer__base{flex-direction:row;justify-content:space-between}
+}
+@media (max-width:991.98px){.gr-footer__top{padding-bottom:40px}}
+
+/* ---------- floating WhatsApp button ---------- */
+.gr-fab{position:fixed;inset-inline-end:22px;bottom:22px;z-index:900;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.4);opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.gr-fab svg{width:30px;height:30px}
+.gr-fab.is-on{opacity:1;transform:none;pointer-events:auto}
+.gr-fab:hover{transform:translateY(-2px)}
+@media (max-width:575.98px){.gr-fab{inset-inline-end:16px;bottom:16px;width:48px;height:48px}.gr-fab svg{width:26px;height:26px}}
+html.gr-lock .gr-fab{opacity:0;pointer-events:none}
+
+/* ---------- language switch fade + early hide (no flash of English) ---------- */
+html.gr-pending #gr-root{visibility:hidden}
+#gr-root .gr-main,#gr-root .gr-footer{transition:opacity .17s ease}
+#gr-root.gr-switching .gr-main,#gr-root.gr-switching .gr-footer{opacity:.18}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){:where(#gr-root) *,:where(#gr-root) *::before,:where(#gr-root) *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* =====================================================================
+   Good Rating v3 section components (src/gr/components.py).
+   Every section is generic: pages pick sections and give them a string key prefix.
+   ===================================================================== */
+
+/* ---- home hero ---- */
+.gr-hero{position:relative;overflow:hidden;background:var(--grad-hero);padding:var(--hero-pad-top) 0 var(--hero-pad-bottom)}
+.gr-hero::before{content:"";position:absolute;top:0;left:calc(50% + 280px);width:440px;height:795px;background:repeating-linear-gradient(149deg,#fff 0 3px,transparent 3px 11px);opacity:.028;pointer-events:none;-webkit-mask-image:radial-gradient(135% 100% at 100% 0,#000 35%,transparent 92%);mask-image:radial-gradient(135% 100% at 100% 0,#000 35%,transparent 92%)}
+.gr-hero__in{position:relative;max-width:1100px;margin:0 auto;text-align:center}
+.gr-badge{display:inline-flex;align-items:center;gap:16px;min-height:48px;padding:7px 18px 7px 8px;border:1px solid #464747;border-radius:999px;max-width:100%}
+.gr-badge__icons{display:flex;flex:0 0 auto}
+.gr-badge__icons span{width:32px;height:32px;border-radius:50%;border:2px solid #464747;background:#141518;display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.gr-badge__icons span svg{width:15px;height:15px}
+.gr-badge__icons span + span{margin-inline-start:-8px}
+.gr-badge h1{font:600 16px/24px var(--font-body);color:#fff;text-align:center}
+@media (max-width:575.98px){.gr-badge{gap:12px;padding-inline-end:14px}.gr-badge h1{font-size:12px;line-height:16.2px}}
+.gr-hero__title{margin-top:18px}
+.gr-hero__title span.gr-line{display:block;text-wrap:balance}
+.gr-hero__p{max-width:1000px;margin:22px auto 0;font:400 16px/24px var(--font-body);color:#fff}
+.gr-hero__p b{font-weight:700}
+.gr-hero .gr-btns{margin-top:31px}
+
+/* hero strip: five example review cards (HTML, no photos) */
+.gr-strip{position:relative;width:1400px;left:50%;margin:93px 0 0 -700px;padding-bottom:25px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:27.5px;text-align:start;pointer-events:none;user-select:none}
+.gr-strip > div{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 52%,rgba(0,0,0,.16) 100%);mask-image:linear-gradient(180deg,#000 0,#000 52%,rgba(0,0,0,.16) 100%)}
+.gr-strip__label{display:flex;align-items:center;gap:7px;min-height:16px;margin-bottom:17px;padding-inline-start:2px;font:500 10.5px/12px var(--font-body);letter-spacing:.6px;text-transform:uppercase;color:#B0B9CB}
+.gr-strip__label svg{width:12px;height:12px;flex:0 0 12px;color:var(--accent)}
+/* RTL: only the horizontal sides flip, so the mobile top/bottom margins below still apply */
+[dir="rtl"] .gr-strip{left:auto;right:50%;margin-left:0;margin-right:-700px}
+.gr-strip__note{display:flex;align-items:center;justify-content:center;gap:8px;margin:72px 0 0;font:500 12.5px/18px var(--font-body);color:#9AA3B5}
+.gr-strip__note svg{flex:0 0 15px;width:15px;height:15px;color:var(--accent)}
+.gr-strip__note + .gr-strip{margin-top:20px}
+/* smaller screens: the strip is drawn smaller, but never so small its text cannot be read (11px floor on phones) */
+@media (max-width:991.98px){.gr-strip{transform:scale(.8);transform-origin:50% 0;margin-bottom:-58px}.gr-strip__note{margin-top:44px}.gr-strip__note + .gr-strip{margin-top:16px}}
+@media (max-width:575.98px){.gr-strip{transform:scale(.88);margin-bottom:-36px}.gr-strip .gr-rv__reply p{font-size:12.5px}}
+
+/* ---- section: numbered list beside a visual (the "reality" layout) ---- */
+.gr-reality__grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:40px}
+.gr-reality__vis{position:relative;min-width:0}
+.gr-numlist li{display:flex;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line-d-20)}
+.gr-numlist li + li{padding-top:30px}
+.gr-numlist li:last-child{border-bottom:0;padding-bottom:0}
+.gr-numlist .n{flex:0 0 auto;font:600 16px/28.8px var(--font-body);color:var(--accent);min-width:19px}
+.gr-numlist h3{font:600 var(--fs-card-title)/var(--lh-card-title) var(--font-body);color:#fff}
+.gr-numlist p{margin-top:14px;font:400 15px/22.5px var(--font-body);color:#fff}
+.gr-numlist .gr-chips{margin-top:14px}
+.gr-on-light .gr-numlist li{border-color:rgba(0,0,0,.12)}
+.gr-on-light .gr-numlist h3{color:#000}
+.gr-on-light .gr-numlist p{color:var(--text-body)}
+.gr-on-light .gr-numlist .n{color:var(--accent-on-light)}
+@media (min-width:992px){.gr-reality__grid{grid-template-columns:1fr 1fr;gap:24px;margin-top:72px;align-items:center}.gr-reality--top .gr-reality__grid{align-items:start}}
+
+/* catch all / honest box (accent border) */
+.gr-box{position:relative;margin-top:48px;padding:40px 22px;border-radius:20px;border:1px solid var(--accent-28);background:var(--grad-box);text-align:center}
+@media (min-width:992px){.gr-box{margin-top:64px;padding:48px 48px}}
+.gr-box .gr-display{font-size:calc(var(--fs-h3) * .82);line-height:calc(var(--lh-h3) * .85);color:var(--accent)}
+.gr-box p{max-width:720px;margin:14px auto 0;font:400 15px/24px var(--font-body);color:var(--on-dark-78)}
+.gr-box p b{color:#fff;font-weight:600}
+.gr-box .gr-btns{margin-top:26px}
+
+/* ---- process: hover / click accordion + UI scene swap ---- */
+.gr-process .gr-head .gr-body{margin-top:16px}
+.gr-process__grid{display:flex;flex-direction:column-reverse;gap:32px;margin-top:32px}
+.gr-steps{position:relative}
+.gr-step{opacity:.46;transition:opacity .25s ease}
+.gr-step.is-active{opacity:1}
+.gr-step__top{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:23.6px 0;text-align:start;cursor:pointer}
+.gr-step__top h3,.gr-step__top span{font:600 var(--fs-card-title)/var(--lh-card-title) var(--font-body);color:var(--text-body)}
+.gr-step__body{height:0;overflow:hidden;opacity:0;transition:height .25s ease,opacity .25s ease}
+.gr-step.is-active .gr-step__body{opacity:1}
+.gr-step__body p{padding:0 0 20px;font:400 14.5px/21px var(--font-body);color:var(--text-body)}
+.gr-step__bar{position:relative;height:1px;background:rgba(70,71,71,.25)}
+.gr-step__bar::after{content:"";position:absolute;inset-inline-start:0;bottom:-.5px;height:2px;width:0;background:var(--ink);transition:width .25s ease}
+.gr-step.is-active .gr-step__bar::after{width:var(--p,25%)}
+.gr-step:first-child .gr-step__top{padding-top:10px}
+.gr-process__vis{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4 / 5;background:#0C0F14;box-shadow:0 18px 40px rgba(17,20,26,.18)}
+.gr-scene{position:absolute;inset:0;opacity:0;visibility:hidden;transform:scale(.985);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s linear .45s}
+.gr-scene.is-on{opacity:1;visibility:visible;transform:none;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s}
+@media (min-width:576px){.gr-process__vis{aspect-ratio:4 / 3}}
+@media (min-width:992px){
+  .gr-process{padding-bottom:120px}
+  .gr-process__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:24px}
+}
+
+/* ---- bento: four cards, alternating widths, a UI mock flush to the bottom ---- */
+.gr-bento{display:flex;flex-direction:column;gap:28px;margin-top:40px}
+.gr-bcard{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-width:0;overflow:hidden;background:var(--grad-hero);border:1px solid var(--line-d-20);border-radius:8px}
+.gr-bcard__txt{padding:32px 20px 0}
+.gr-bcard__txt h3{font:600 var(--fs-card-title)/var(--lh-card-title) var(--font-body);color:#fff;margin-bottom:16px}
+.gr-bcard__txt p{padding-inline-start:20px;border-inline-start:1px solid #4D4D4D;font:400 15px/22.5px var(--font-body);color:#fff}
+.gr-bcard__txt .gr-plain{margin-top:18px;color:var(--accent)}
+.gr-bcard__mock{position:relative;margin:0 20px;min-width:0}
+@media (min-width:1200px){
+  .gr-bento{flex-direction:row;flex-wrap:wrap;gap:50px 28px;margin-top:84px}
+  .gr-bcard{min-height:466px}
+  .gr-bcard--w{flex:0 0 calc((100% - 28px) * .5513)}
+  .gr-bcard--n{flex:0 0 calc((100% - 28px) * .4487)}
+  .gr-bcard__txt{padding:55px 55px 0}
+  .gr-bcard--1 .gr-bcard__mock{margin:0 72px}
+  .gr-bcard--2 .gr-bcard__mock{margin:0 45px}
+  .gr-bcard--3 .gr-bcard__mock{margin:0 0 0 55px;margin-inline:55px -40px}
+  .gr-bcard--4 .gr-bcard__mock{margin:0;margin-inline:55px -40px}
+  .gr-bcard--3 .gr-bcard__mock > *,.gr-bcard--4 .gr-bcard__mock > *{border-start-end-radius:0;border-end-end-radius:0}
+  .gr-bcard--4 .gr-wl__card{border-start-end-radius:0;border-end-end-radius:0;padding-inline-end:55px}
+  .gr-bcard--3 .gr-chat__bar,.gr-bcard--3 .gr-chat__body{padding-inline-end:54px}
+}
+@media (min-width:768px) and (max-width:1199.98px){.gr-bcard__mock{margin:0 40px}}
+
+/* ---- facts box: tiles + hairline + text and a framed UI card ---- */
+.gr-wwd{background:var(--grad-hero);padding:0 0 var(--sec-pad)}
+.gr-wwd--top{padding-top:var(--sec-pad)}
+.gr-wwd__box{border-radius:0 0 16px 16px;background:var(--ink);padding:48px 12px}
+@media (min-width:992px){.gr-wwd__box{border-radius:16px;padding:96px 80px}}
+.gr-tiles{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px;padding:0 4px}
+@media (min-width:576px){.gr-tiles{grid-template-columns:repeat(2,1fr);gap:20px;padding:0}}
+@media (min-width:1200px){.gr-tiles{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}}
+.gr-tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:168px;padding:24px 18px;border-radius:14px;border:1px solid var(--line-d-10);background:var(--grad-tile);overflow:hidden;isolation:isolate;text-align:center}
+.gr-tile::before{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(0,0,0,.55);border:1px solid var(--line-d-12);z-index:-1}
+.gr-tile > svg{flex:0 0 32px;width:32px;height:32px;color:var(--accent)}
+.gr-tile b{display:block;font-family:var(--font-display);font-weight:800;font-size:var(--fs-tile);line-height:var(--lh-tile);letter-spacing:.3px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.gr-tile small{display:block;font:400 13.5px/19px var(--font-body);color:var(--on-dark-62);max-width:220px}
+a.gr-tile{transition:border-color .2s,transform .2s,box-shadow .2s}
+a.gr-tile:hover{border-color:var(--accent-60);transform:translateY(-3px);box-shadow:var(--sh-tile-hover)}
+.gr-hair{height:1px;margin:48px 0;background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.28) 50%,transparent 100%)}
+.gr-wwd__cols{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;padding:0 8px}
+@media (min-width:992px){.gr-wwd__cols{grid-template-columns:7fr 5fr;gap:48px;align-items:center;padding:0}}
+.gr-wwd__cols h3{font:700 24px/30px var(--font-alt);color:#fff}
+.gr-wwd__cols > div > p{margin-top:16px;font:400 15px/22.5px var(--font-body);color:#fff}
+.gr-ticks{margin-top:18px}
+.gr-ticks li{position:relative;padding-inline-start:26px;font:400 15px/22.5px var(--font-body);color:#fff}
+.gr-ticks li + li{margin-top:16px}
+.gr-ticks li svg{position:absolute;inset-inline-start:0;top:5px;width:15px;height:13px;color:var(--accent)}
+.gr-on-light .gr-ticks li{color:var(--text-body)}
+.gr-on-light .gr-ticks li svg{color:var(--accent-on-light)}
+.gr-frame{width:100%;max-width:445px;margin-inline-start:auto;border-radius:16px;background:#000;border:1px solid var(--line-d-12);box-shadow:var(--sh-video);overflow:hidden}
+@media (max-width:991.98px){.gr-frame{margin:0 auto}}
+
+/* ---- founder note ---- */
+.gr-founder__grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:992px){.gr-founder__grid{grid-template-columns:5fr 7fr;gap:72px}}
+.gr-founder__card{padding:32px 26px;border-radius:16px;background:var(--grad-card);border:1px solid var(--line-d-10);box-shadow:var(--sh-price);max-width:440px;width:100%;margin:0 auto}
+.gr-founder__card .gr-mono{width:132px;height:132px;border-radius:18px}
+.gr-founder__card .gr-mono span{font-size:72px}
+.gr-founder__name{margin-top:24px;font:700 24px/30px var(--font-body);color:#fff}
+.gr-founder__role{display:block;margin-top:6px;font:700 12px/17px var(--font-body);letter-spacing:.9px;text-transform:uppercase;color:var(--accent)}
+.gr-founder__facts{margin-top:22px;padding-top:20px;border-top:1px solid var(--line-d-12)}
+.gr-founder__facts li{display:flex;align-items:center;gap:12px;font:500 14.5px/21px var(--font-body);color:var(--on-dark-78)}
+.gr-founder__facts li + li{margin-top:12px}
+.gr-founder__facts li i{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:#000;border:1px solid var(--line-d-20);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.gr-founder__facts li i svg{width:13px;height:13px}
+.gr-founder__txt .gr-display{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+.gr-founder__txt p{margin-top:18px;font:400 16px/27px var(--font-body);color:var(--on-dark-72)}
+.gr-founder__txt p:first-of-type{margin-top:24px}
+.gr-founder__sign{display:flex;align-items:center;gap:16px;margin-top:28px}
+.gr-founder__sign .gr-sig{flex:0 0 auto;font:600 40px/1 var(--font-script);color:#fff;transform:rotate(-3deg);direction:ltr;white-space:nowrap}
+@media (max-width:575.98px){.gr-founder__sign .gr-sig{font-size:34px}}
+.gr-founder__sign small{display:block;font:400 13px/19.5px var(--font-body);color:var(--on-dark-62)}
+.gr-founder__sign span.gr-rule{width:1px;align-self:stretch;background:var(--line-d-20)}
+
+/* ---- inner page hero + breadcrumbs ---- */
+.gr-phero{position:relative;overflow:hidden;background:#000;padding:var(--hero-pad-top) 0 calc(var(--hero-pad-bottom) * .9)}
+.gr-phero--ink{background:var(--ink)}
+.gr-phero--grad{background:var(--grad-hero)}
+.gr-phero::before{content:"";position:absolute;top:0;inset-inline-end:0;width:440px;height:600px;background:repeating-linear-gradient(149deg,#fff 0 3px,transparent 3px 11px);opacity:.025;pointer-events:none;-webkit-mask-image:radial-gradient(120% 100% at 100% 0,#000 30%,transparent 90%);mask-image:radial-gradient(120% 100% at 100% 0,#000 30%,transparent 90%)}
+.gr-phero__in{position:relative;max-width:966px}
+.gr-phero__in .gr-display{font-size:var(--fs-h1);line-height:var(--lh-h1)}
+.gr-phero__in .gr-display + p{margin-top:20px}
+.gr-phero__in p{font:400 var(--fs-lead)/1.65 var(--font-body);color:var(--on-dark-76,rgba(255,255,255,.76));max-width:820px}
+.gr-phero .gr-btns{margin-top:30px}
+.gr-phero--split .gr-phero__grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:992px){.gr-phero--split .gr-phero__grid{grid-template-columns:7fr 5fr;gap:56px}}
+@media (max-width:575.98px){
+  .gr-phero__vis .gr-vis-frame{aspect-ratio:auto;background:none;box-shadow:none;border-radius:10px}
+  .gr-phero__vis .gr-vis-frame > .gr-stage{position:relative;background:none}
+  .gr-phero__vis .gr-vis-frame .gr-fit{position:static;width:100%;transform:none;align-items:stretch}
+  .gr-phero__vis .gr-sh{border-radius:10px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .gr-phero__vis .gr-sh__grid > :nth-child(n+21){display:none}
+  .gr-phero__vis .gr-sh__grid{font-size:12.5px}
+  .gr-phero__vis .gr-sh__grid > span.h,.gr-phero__vis .gr-sh__grid > span.n,.gr-phero__vis .gr-st{font-size:11.5px}
+  .gr-phero__vis .gr-sh__more{font-size:12px}
+  .gr-phero__vis .gr-sh__bar b{font-size:13px}
+}
+.gr-crumbs{background:#fff;border-bottom:1px solid rgba(0,0,0,.06)}
+.gr-crumbs ol{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:18px 0;font:400 15px/22px var(--font-body);color:#6B7280}
+.gr-crumbs li{display:flex;align-items:center;gap:8px}
+.gr-crumbs li + li::before{content:"/";color:#9CA3AF}
+.gr-crumbs a{color:#6B7280;transition:color .2s}
+.gr-crumbs a:hover{color:#000}
+.gr-crumbs [aria-current]{font-weight:600;color:#111}
+
+/* ---- service hero: full bleed photo band (reference service hero) ---- */
+.gr-shero{position:relative;background:#000;padding:var(--nav-h) 0 calc(var(--hero-pad-bottom) * .9)}
+.gr-shero__band{position:relative;height:300px;overflow:hidden;background:#15171A}
+.gr-shero__band picture,.gr-shero__band img{display:block;width:100%;height:100%}
+.gr-shero__band img{object-fit:cover;object-position:50% 50%}
+.gr-shero__band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.08) 38%,rgba(0,0,0,.42) 74%,#000 100%)}
+.gr-shero__txt{padding-top:28px}
+.gr-shero .gr-btns{margin-top:30px}
+@media (min-width:576px){.gr-shero__band{height:380px}}
+@media (min-width:992px){.gr-shero{padding-top:var(--hero-pad-top)}.gr-shero__band{height:520px}.gr-shero__txt{padding-top:48px;max-width:900px}}
+
+/* ---- photo bands (about) ---- */
+.gr-photo{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#141518}
+.gr-photo picture,.gr-photo img{display:block;width:100%;height:100%}
+.gr-photo img{object-fit:cover}
+.gr-photo--wide{aspect-ratio:16 / 9}
+.gr-photo--pair{aspect-ratio:4 / 3}
+.gr-photos{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+@media (min-width:768px){.gr-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+.gr-photosec + .gr-photosec,.gr-bg-ink + .gr-photosec.gr-bg-ink{padding-top:0}
+.gr-photosec + .gr-wwd--top{padding-top:0}
+
+/* ---- split: text beside a visual ---- */
+.gr-split__grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:992px){.gr-split__grid{grid-template-columns:1fr 1fr;gap:48px}.gr-split--flip .gr-split__vis{order:2}}
+.gr-split__txt .gr-display{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+.gr-split__txt p{margin-top:18px;font:400 16px/26px var(--font-body);color:var(--on-dark-72)}
+.gr-split__txt .gr-display + p{margin-top:22px}
+.gr-on-light .gr-split__txt p{color:var(--text-body)}
+.gr-split__txt .gr-btns{margin-top:28px}
+.gr-split__vis{min-width:0}
+.gr-vis-frame{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4 / 3;background:#0C0F14;box-shadow:0 18px 40px rgba(17,20,26,.18)}
+.gr-vis-frame > .gr-scene{opacity:1;visibility:visible;transform:none}
+.gr-vis-frame .gr-in{opacity:1;transform:none}
+
+
+/* ---- card grid (check badge cards) ---- */
+.gr-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
+@media (min-width:576px){.gr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:992px){.gr-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}.gr-grid--4{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1200px){.gr-grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.gr-gcard{position:relative;display:flex;flex-direction:column;gap:14px;min-width:0;padding:26px 22px 24px;border-radius:16px;background:var(--grad-card);border:1px solid var(--line-d-10);transition:border-color .2s,transform .2s,box-shadow .2s;overflow:hidden}
+.gr-gcard::before{content:"";position:absolute;top:0;inset-inline:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .2s ease}
+a.gr-gcard:hover{border-color:var(--accent-55);transform:translateY(-3px);box-shadow:var(--sh-card-hover)}
+a.gr-gcard:hover::before{transform:scaleX(1)}
+a.gr-gcard:hover h3{color:var(--accent)}
+.gr-gcard h3{font:500 22px/26px var(--font-body);text-transform:uppercase;color:#fff;transition:color .2s}
+.gr-gcard p{font:400 14px/22.4px var(--font-body);color:var(--on-dark-62)}
+.gr-gcard__more{margin-top:auto;padding-top:4px;display:inline-flex;align-items:center;gap:8px;font:600 14px/20px var(--font-body);color:var(--accent)}
+.gr-gcard__more svg{width:16px;height:16px;transition:transform .2s}
+a.gr-gcard:hover .gr-gcard__more svg{transform:translateX(3px)}
+[dir="rtl"] a.gr-gcard:hover .gr-gcard__more svg{transform:scaleX(-1) translateX(3px)}
+
+/* ---- numbered cards (how we work) ---- */
+.gr-ncards{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px;counter-reset:grn}
+@media (min-width:768px){.gr-ncards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1200px){.gr-ncards{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}}
+.gr-ncard{padding:26px 22px;border-radius:16px;background:var(--grad-card);border:1px solid var(--line-d-10);counter-increment:grn}
+.gr-ncard::before{content:counter(grn,decimal-leading-zero);display:block;font:600 24px/28px var(--font-body);color:var(--accent)}
+.gr-ncard h3{margin-top:18px;font:600 20px/25px var(--font-body);color:#fff}
+.gr-ncard p{margin-top:10px;font:400 14.5px/22px var(--font-body);color:var(--on-dark-70)}
+
+/* ---- two lists side by side: what qualifies vs what usually stays ---- */
+.gr-pair{display:grid;grid-template-columns:1fr;gap:20px;margin-top:40px}
+@media (min-width:992px){.gr-pair{grid-template-columns:1fr 1fr;gap:24px}}
+.gr-pair__card{padding:30px 24px;border-radius:16px;border:1px solid var(--line-l-12);background:#fff}
+.gr-pair__card h3{display:flex;align-items:center;gap:12px;font:700 20px/26px var(--font-body);color:#000}
+.gr-pair__card ul{margin-top:18px}
+.gr-pair__card li{position:relative;padding-inline-start:34px;font:400 15px/23px var(--font-body);color:var(--text-body)}
+.gr-pair__card li + li{margin-top:12px}
+.gr-pair__card li i{position:absolute;inset-inline-start:0;top:1px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gr-pair__card li i svg{width:12px;height:12px}
+.gr-pair__card--yes li i{background:var(--accent-on-light);color:#fff}
+.gr-pair__card--no li i{background:#E5E7EB;color:#4B5563}
+.gr-pair__card--no{background:var(--gray-50);border-color:transparent}
+.gr-pair__note{margin-top:22px;text-align:center;font:500 14.5px/22px var(--font-body);color:var(--text-body)}
+
+/* ---- prose (long form content, 636px column) ---- */
+.gr-prose{max-width:720px;margin:0 auto}
+.gr-prose h2{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:var(--fs-h3);line-height:var(--lh-h3);color:#000;text-align:center}
+.gr-prose h3{margin-top:40px;font:700 22px/28px var(--font-body);color:#000}
+.gr-prose h2 + p,.gr-prose h3 + p{margin-top:16px}
+.gr-prose p{margin-top:16px;font:400 16px/27px var(--font-body);color:var(--text-body)}
+.gr-prose ul{margin-top:16px}
+.gr-prose li{position:relative;padding-inline-start:34px;font:400 16px/26px var(--font-body);color:var(--text-body)}
+.gr-prose li + li{margin-top:10px}
+.gr-prose li svg{position:absolute;inset-inline-start:0;top:2px;width:22px;height:22px;color:var(--accent-on-light)}
+.gr-prose .gr-neg li svg{color:#E5E7EB}
+.gr-prose--dark .gr-neg li svg{color:#3A3B40}
+.gr-prose--dark .gr-neg li svg path{stroke:#C9CACC}
+.gr-prose b{color:#000;font-weight:600}
+.gr-prose--dark h2,.gr-prose--dark h3,.gr-prose--dark b{color:#fff}
+.gr-prose--dark p,.gr-prose--dark li{color:var(--on-dark-72)}
+
+/* ---- related reading cards ---- */
+.gr-related__head{display:flex;flex-direction:column;gap:16px}
+.gr-related__grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media (min-width:768px){.gr-related__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1200px){.gr-related__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gr-rcard{display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line-d-12);transition:border-color .2s,transform .2s}
+.gr-rcard:hover{border-color:var(--accent-55);transform:translateY(-2px)}
+.gr-rcard h3{font:600 18px/24px var(--font-body);color:#fff}
+.gr-rcard p{font:400 14px/21px var(--font-body);color:var(--on-dark-62)}
+.gr-rcard span{margin-top:auto;padding-top:6px;display:inline-flex;align-items:center;gap:8px;font:600 14px/20px var(--font-body);color:var(--accent)}
+.gr-rcard span svg{width:16px;height:16px}
+[dir="rtl"] .gr-rcard span svg,[dir="rtl"] .gr-arrow{transform:scaleX(-1)}
+/* the honest / catch all box closing a card grid */
+.gr-grid + .gr-box{margin-top:24px}
+/* =====================================================================
+   UI illustrations (src/gr/scenes.py): crisp HTML + inline SVG, no photos.
+   Anything that looks like a real Google review carries an "Example" chip and a generic name.
+   Navy UI palette on near black frames, accent = the site accent token.
+   ===================================================================== */
+.gr-ui{--ui-top:#252D41;--ui-bot:#1F2535;--ui-panel:#141925;--ui-panel-2:#1A2030;--ui-line:rgba(255,255,255,.08);--ui-meta:#B0B9CB;--ui-copy:#8D98AF;--ui-text:#E6EAF2;
+  font-family:var(--font-body);color:var(--ui-text);text-align:start}
+.gr-ui *{box-sizing:border-box}
+.gr-ex{flex:0 0 auto;display:inline-flex;align-items:center;padding:2px 9px;border-radius:999px;border:1px solid var(--accent-55);font:700 9.5px/14px var(--font-body);font-style:normal;letter-spacing:1px;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.gr-st{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font:700 10.5px/14px var(--font-body);font-style:normal;letter-spacing:.3px;white-space:nowrap}
+.gr-st::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.gr-st--removed{background:rgba(98,209,123,.13);color:#7EE29A;border:1px solid rgba(98,209,123,.35)}
+.gr-st--reported{background:var(--accent-12);color:var(--accent);border:1px solid var(--accent-40)}
+.gr-st--checking{background:rgba(255,176,32,.1);color:#FFC85C;border:1px solid rgba(255,176,32,.32)}
+.gr-st--stays{background:rgba(255,255,255,.06);color:#B0B9CB;border:1px solid rgba(255,255,255,.16)}
+.gr-st--queued{background:transparent;color:#8D98AF;border:1px dashed rgba(255,255,255,.22)}
+.gr-tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:5px;background:rgba(255,255,255,.06);font:600 10.5px/15px var(--font-body);color:#C9D0DC;white-space:nowrap}
+.gr-tag svg{width:11px;height:11px;color:var(--accent)}
+.gr-stars{display:inline-flex;gap:1.5px;direction:ltr}
+.gr-stars svg{width:11px;height:11px}
+.gr-av{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 12.5px/1 var(--font-body);color:#fff;background:hsl(var(--h,215) 32% 34%)}
+.gr-url{font:400 10.5px/15px var(--font-body);color:#7FA7E8;direction:ltr;unicode-bidi:isolate;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* review card (hero strip + scenes) */
+.gr-rv{position:relative;display:flex;flex-direction:column;gap:10px;padding:16px 16px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.11);background:linear-gradient(var(--ui-top) 0%,var(--ui-bot) 100%);box-shadow:0 20px 44px rgba(0,0,0,.16);min-width:0}
+.gr-rv__head{display:flex;align-items:center;gap:10px;min-width:0}
+.gr-rv__who{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px}
+.gr-rv__who b{font:600 13px/16px var(--font-body);color:#F2F4F8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;unicode-bidi:isolate;text-align:left}
+/* Latin example names stay left to right ("Alex D." keeps its period), but sit next to the avatar in Urdu */
+[dir="rtl"] .gr-rv__who b,[dir="rtl"] .gr-staff__who b{text-align:right}
+.gr-rv__who .gr-stars{align-self:flex-start}
+.gr-rv__txt{font:400 12.5px/19px var(--font-body);color:#AEB6C6}
+.gr-rv__foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:auto}
+.gr-strip .gr-rv{height:223px;padding:20px 20px 16px;gap:12px;overflow:hidden}
+.gr-strip .gr-rv__txt{font-size:13px;line-height:20px;color:#B4BCCB}
+.gr-rv__dots{flex:0 0 auto;width:22px;height:22px;margin-inline-end:-4px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#B0B9CB}
+.gr-rv__dots svg{width:16px;height:16px}
+.gr-rv__reply{display:flex;flex-direction:column;gap:3px;margin-top:4px;padding-block:2px;padding-inline:11px 0;border-inline-start:2px solid var(--accent-40)}
+.gr-rv__reply b{font:700 10.5px/14px var(--font-body);letter-spacing:.3px;text-transform:uppercase;color:var(--accent)}
+.gr-rv__reply p{font:400 12px/17px var(--font-body);color:#C9D0DC}
+.gr-strip .gr-rv__foot{margin-top:2px}
+.gr-rv--off{opacity:.55}
+.gr-rv--off .gr-rv__txt{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.35)}
+
+/* framed scene (process steps, split visuals): a dark stage with a soft accent glow and a dot grid. The scene itself sits in
+   .gr-fit, a 480px wide box that site.js scales (--k) to fit the stage, so it behaves like an image at every size. */
+.gr-stage{position:absolute;inset:0;overflow:hidden;background:
+  radial-gradient(70% 60% at 72% 18%,var(--accent-12) 0%,transparent 70%),
+  radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 1.4px) 0 0/20px 20px,
+  linear-gradient(#171B24,#0C0F14)}
+.gr-fit{position:absolute;left:50%;top:50%;width:480px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%) scale(var(--k,1));transform-origin:50% 50%}
+.gr-fit > .gr-panel{width:100%;max-width:440px}
+.gr-stage--static{position:relative;inset:auto;border-radius:14px;padding:6%;display:flex;align-items:center;justify-content:center}
+.gr-panel{width:100%;max-width:440px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:var(--ui-panel);box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.gr-panel__bar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--ui-line);background:var(--ui-panel-2)}
+.gr-panel__bar b{flex:1 1 auto;min-width:0;font:700 13px/18px var(--font-body);color:#F2F4F8;overflow-wrap:break-word}
+.gr-panel__bar > svg{flex:0 0 18px;width:18px;height:18px;color:var(--accent)}
+.gr-panel__body{padding:12px 16px 14px}
+.gr-panel__foot{display:flex;align-items:center;gap:10px;padding:12px 16px;border-top:1px solid var(--ui-line);background:rgba(255,255,255,.02);font:600 12px/17px var(--font-body);color:#C9D0DC}
+.gr-panel__foot svg{flex:0 0 16px;width:16px;height:16px;color:var(--accent)}
+.gr-panel__foot--wa svg{color:var(--wa)}
+
+/* entrance: parts of the active scene fade up in a short stagger */
+.gr-scene .gr-in{opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * .08s + .1s)}
+.gr-scene.is-on .gr-in,.gr-static .gr-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.gr-scene .gr-in{opacity:1;transform:none}}
+
+/* triage: what gets reported vs what stays */
+.gr-tri{max-width:520px}
+.gr-tri__item{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--ui-line)}
+.gr-tri__item:first-child{border-top:0;padding-top:4px}
+.gr-tri__main{flex:1 1 auto;min-width:0}
+.gr-tri__top{display:flex;align-items:center;gap:8px;min-width:0}
+.gr-tri__top b{font:600 12.5px/16px var(--font-body);color:#F2F4F8;direction:ltr;white-space:nowrap}
+.gr-tri__main p{margin-top:5px;font:400 12px/18px var(--font-body);color:#AEB6C6}
+.gr-tri__meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:8px}
+.gr-tri__item--keep p{color:#C9D0DC}
+.gr-reality__vis .gr-stage{position:relative;border-radius:8px;aspect-ratio:auto;padding:36px 24px}
+@media (min-width:992px){.gr-reality__vis .gr-stage{min-height:470px;padding:40px 48px}}
+
+/* copy link: phone + share sheet + WhatsApp bubbles (480px design box) */
+.gr-copy{display:flex;align-items:center;justify-content:center;gap:14px;width:100%}
+.gr-phone{flex:0 0 218px;width:218px;height:372px;border-radius:32px;border:1.5px solid rgba(255,255,255,.16);background:#090B0F;padding:7px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.gr-phone__scr{position:relative;height:100%;border-radius:25px;overflow:hidden;background:linear-gradient(#1D2433,#0F131B);padding:30px 10px 10px;display:flex;flex-direction:column;gap:7px}
+.gr-phone__scr::before{content:"";position:absolute;top:9px;left:50%;width:56px;height:14px;margin-left:-28px;border-radius:8px;background:#090B0F}
+.gr-phone__hd{display:flex;align-items:center;gap:7px;padding:0 2px 2px;font:700 10.5px/14px var(--font-body);color:#DDE3EE}
+.gr-phone__hd svg{width:13px;height:13px;color:var(--accent)}
+.gr-phone .gr-rv{padding:10px;gap:6px;box-shadow:none}
+.gr-phone .gr-rv__txt{font-size:10.5px;line-height:15px}
+.gr-phone .gr-av{width:22px;height:22px;font-size:10px}
+.gr-phone .gr-rv__who b{font-size:11.5px;line-height:14px}
+.gr-phone .gr-ex{font-size:8.5px;padding:1px 7px}
+.gr-rv--dim{opacity:.45}
+.gr-sheet-ui{margin-top:auto;border-radius:14px;background:#232A3B;border:1px solid rgba(255,255,255,.08);padding:10px 10px 12px;box-shadow:0 -12px 30px rgba(0,0,0,.35)}
+.gr-sheet-ui > b{display:block;font:700 10.5px/14px var(--font-body);color:#DDE3EE;margin-bottom:8px}
+.gr-sheet-ui__opts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gr-sheet-ui__opts span{display:flex;flex-direction:column;align-items:center;gap:5px;font:500 9px/12px var(--font-body);color:#AEB6C6;text-align:center}
+.gr-sheet-ui__opts i{width:30px;height:30px;border-radius:50%;background:#2E374C;display:flex;align-items:center;justify-content:center;color:#fff}
+.gr-sheet-ui__opts i svg{width:14px;height:14px}
+.gr-sheet-ui__opts .on i{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 0 4px var(--accent-24)}
+.gr-sheet-ui__opts .on{color:#fff;font-weight:700}
+.gr-toast{align-self:center;margin-top:auto;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:#F2F4F8;color:#11141A;font:700 9.5px/13px var(--font-body);white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.gr-toast + .gr-sheet-ui{margin-top:10px}
+.gr-phone__hd b{flex:1 1 auto;min-width:0}
+.gr-toast svg{width:11px;height:11px;color:#1FA65A}
+.gr-copy__arrow{flex:0 0 auto;width:30px;height:30px;color:var(--accent);opacity:.9}
+/* flip the drawing, not the span: the span's transform is the scene's entrance animation */
+[dir="rtl"] .gr-copy__arrow svg{transform:scaleX(-1)}
+.gr-bubbles{flex:0 0 196px;width:196px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.gr-bub{position:relative;max-width:100%;padding:9px 11px 8px;border-radius:12px;font:400 11.5px/16px var(--font-body);color:#E9EDEF;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.gr-bub--out{align-self:flex-end;background:#005C4B;border-end-end-radius:3px}
+.gr-bub--in{align-self:flex-start;background:#202C33;border-end-start-radius:3px}
+.gr-bub .gr-url{display:block;color:#8FD3FF;text-decoration:underline;text-decoration-color:rgba(143,211,255,.4)}
+.gr-bub__ticks{display:flex;justify-content:flex-end;margin-top:2px;color:#53BDEB}
+.gr-bub__ticks svg{width:15px;height:10px}
+.gr-bub b{font-weight:700}
+@media (max-width:575.98px){
+  .gr-fit{width:360px}
+  .gr-copy{gap:8px}
+  .gr-phone{flex-basis:180px;width:180px;height:340px}
+  .gr-bubbles{flex-basis:148px;width:148px}
+  .gr-copy__arrow{width:20px;height:20px}
+  .gr-phone .gr-rv__head{gap:6px}
+  .gr-phone .gr-ex{font-size:7.5px;padding:0 5px;letter-spacing:.6px}
+  .gr-phone .gr-rv--dim{display:none}
+}
+
+/* policy check */
+.gr-pol .gr-rv{box-shadow:none;background:rgba(255,255,255,.03)}
+.gr-pol__rules{margin-top:12px}
+.gr-pol__rules li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 2px;border-top:1px solid var(--ui-line);font:500 12px/16px var(--font-body);color:#D5DAE4}
+.gr-pol__rules li:first-child{border-top:0}
+.gr-pol__rules li span{display:flex;align-items:center;gap:9px;min-width:0}
+.gr-pol__rules li span i{flex:0 0 18px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gr-pol__rules li span i svg{width:10px;height:10px}
+.gr-pol__rules li.hit span i{background:var(--accent);color:var(--accent-ink)}
+.gr-pol__rules li.ok span i{background:rgba(255,255,255,.08);color:#8D98AF}
+.gr-pol__rules li.ok{color:#97A1B4}
+.gr-pol__res{flex:0 0 auto;font:700 10.5px/14px var(--font-body);letter-spacing:.3px;text-transform:uppercase}
+li.hit .gr-pol__res{color:var(--accent)}
+li.ok .gr-pol__res{color:#7D879A}
+.gr-verdict{display:flex;align-items:center;gap:10px;margin-top:12px;padding:11px 12px;border-radius:10px;background:var(--accent-12);border:1px solid var(--accent-40);font:700 12.5px/17px var(--font-body);color:#fff}
+.gr-verdict svg{flex:0 0 18px;width:18px;height:18px;color:var(--accent)}
+
+.gr-pol__rules--why li{justify-content:flex-start;color:#E6EAF2}
+.gr-pol__rules--why li span{align-items:flex-start}
+.gr-pol__rules--why li span i{margin-top:1px}
+
+/* tracker + summary rows */
+.gr-trk li{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--ui-line)}
+.gr-trk li:first-child{border-top:0;padding-top:2px}
+.gr-trk__main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.gr-trk__main b{font:600 12.5px/16px var(--font-body);color:#F2F4F8}
+.gr-prog{display:flex;gap:4px;margin-top:2px;direction:ltr}
+[dir="rtl"] .gr-prog{direction:rtl}
+.gr-prog i{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.1)}
+.gr-prog i.on{background:var(--accent)}
+.gr-prog--done i.on{background:#62D17B}
+.gr-sum li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--ui-line)}
+.gr-sum li:first-child{border-top:0;padding-top:2px}
+.gr-sum li > b{font:600 12.5px/16px var(--font-body);color:#F2F4F8;min-width:0}
+.gr-pay{min-width:74px;text-align:end;font:700 11.5px/16px var(--font-body);color:#fff}
+.gr-pay--no{color:#7D879A;font-weight:600}
+.gr-sum__total{display:flex;align-items:center;gap:10px;margin-top:4px;padding:11px 12px;border-radius:10px;background:rgba(98,209,123,.1);border:1px solid rgba(98,209,123,.3);font:700 12.5px/17px var(--font-body);color:#fff}
+.gr-sum__total svg{flex:0 0 18px;width:18px;height:18px;color:#7EE29A}
+
+/* bulk sheet (agencies) */
+.gr-sh{border-radius:8px 8px 0 0;border:1px solid rgba(255,255,255,.12);border-bottom:0;background:#10141C;overflow:hidden}
+.gr-sh__bar{display:flex;align-items:center;gap:8px;height:36px;padding:0 14px;background:#161B27;border-bottom:1px solid var(--ui-line)}
+.gr-sh__bar svg{width:16px;height:16px;color:#34A853}
+.gr-sh__bar b{flex:1 1 auto;font:600 12px/16px var(--font-body);color:#DDE3EE;direction:ltr;text-align:start}
+.gr-sh__grid{display:grid;grid-template-columns:30px minmax(0,1.5fr) minmax(0,.9fr) minmax(0,.9fr);font:400 11.5px/16px var(--font-body)}
+.gr-sh__grid > span{display:flex;align-items:center;min-width:0;height:36px;padding:0 10px;border-bottom:1px solid rgba(255,255,255,.06);border-inline-start:1px solid rgba(255,255,255,.06);color:#C9D0DC;white-space:nowrap;overflow:hidden}
+.gr-sh__grid > span.h{height:30px;background:#151A25;font-weight:700;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase;color:#8D98AF}
+.gr-sh__grid > span.n{justify-content:center;border-inline-start:0;color:#6F7A8E;background:#131823;font-size:10.5px}
+.gr-sh__grid > span.u .gr-url{display:block}
+.gr-sh__more{padding:9px 14px 12px;font:500 11px/15px var(--font-body);color:#7D879A}
+
+/* WhatsApp chat */
+.gr-chat{border-radius:8px 8px 0 0;border:1px solid rgba(255,255,255,.12);border-bottom:0;background:#0B141A;overflow:hidden}
+.gr-chat__bar{display:flex;align-items:center;gap:11px;padding:11px 14px;background:#1F2C34}
+.gr-chat__bar .gr-chat__av{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:#0E1626;display:flex;align-items:center;justify-content:center}
+.gr-chat__bar .gr-chat__av svg{width:20px;height:20px}
+.gr-chat__bar b{display:block;font:600 13.5px/17px var(--font-body);color:#E9EDEF;direction:ltr;text-align:start}
+.gr-chat__bar small{display:block;font:400 11px/15px var(--font-body);color:#8696A0}
+.gr-chat__body{display:flex;flex-direction:column;gap:8px;padding:14px 14px 18px;background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.035) 1px,transparent 1.4px) 0 0/16px 16px,#0B141A}
+.gr-chat__body .gr-bub{max-width:82%}
+
+/* white label: behind the scenes vs what the client sees */
+.gr-wl{display:flex;flex-direction:column;gap:12px;padding-bottom:22px}
+.gr-wl__card{border-radius:12px;border:1px solid rgba(255,255,255,.11);background:var(--ui-panel);padding:13px 15px}
+.gr-wl__card--front{background:#F7F8FA;border-color:transparent;color:#1F2430;margin-inline-start:28px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.gr-wl__label{display:flex;align-items:center;justify-content:space-between;gap:10px;font:700 10px/14px var(--font-body);letter-spacing:.8px;text-transform:uppercase;color:#8D98AF}
+.gr-wl__card--front .gr-wl__label{color:#6B7280}
+.gr-wl__from{display:flex;align-items:center;gap:9px;margin-top:10px}
+.gr-wl__from i{flex:0 0 28px;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font:800 11px/1 var(--font-body);font-style:normal}
+.gr-wl__card--back .gr-wl__from i{background:#0E1626}
+.gr-wl__card--back .gr-wl__from i svg{width:17px;height:17px}
+.gr-wl__card--front .gr-wl__from i{background:var(--accent-on-light);color:#fff;border-radius:50%}
+.gr-wl__from b{font:700 12.5px/16px var(--font-body);color:#F2F4F8}
+.gr-wl__card--front .gr-wl__from b{color:#111827}
+.gr-wl__card p{margin-top:8px;font:400 12.5px/18px var(--font-body);color:#C9D0DC}
+.gr-wl__card--front p{color:#374151}
+
+/* working hours card (live open / closed) */
+.gr-hours{padding:20px 22px 18px;background:linear-gradient(#171B24,#0F131B)}
+.gr-hours__top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding-bottom:14px;border-bottom:1px solid var(--ui-line)}
+.gr-hours__top .gr-chat__av{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:#0E1626;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center}
+.gr-hours__top .gr-chat__av svg{width:21px;height:21px}
+.gr-hours__top b{flex:1 1 auto;min-width:0;font:700 14px/19px var(--font-body);color:#fff}
+.gr-live{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:700 10.5px/15px var(--font-body);white-space:nowrap;background:rgba(255,255,255,.06);color:#B0B9CB;border:1px solid rgba(255,255,255,.14)}
+.gr-live::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.gr-live [data-when]{display:none}
+.gr-live[data-state="open"]{background:rgba(98,209,123,.12);color:#7EE29A;border-color:rgba(98,209,123,.35)}
+.gr-live[data-state="open"] [data-when="open"],.gr-live[data-state="closed"] [data-when="closed"]{display:inline}
+.gr-live:not([data-state]) [data-when="closed"]{display:inline}
+.gr-live--note{background:var(--accent-12);color:var(--accent);border-color:var(--accent-40)}
+.gr-hours dl{margin-top:4px}
+.gr-hours dl > div{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--ui-line)}
+.gr-hours dt{font:500 12.5px/18px var(--font-body);color:#8D98AF}
+.gr-hours dd{font:600 13.5px/19px var(--font-body);color:#F2F4F8;text-align:end}
+.gr-hours__wa{display:flex;align-items:center;gap:10px;margin-top:14px;font:600 13.5px/19px var(--font-body);color:#fff}
+.gr-hours__wa svg{flex:0 0 18px;width:18px;height:18px;color:var(--wa)}
+
+/* owners bento: the profile's reviews with the review menu open */
+.gr-owner{border-radius:10px 10px 0 0;border:1px solid rgba(255,255,255,.12);border-bottom:0;background:var(--ui-panel);overflow:hidden}
+.gr-owner .gr-panel__bar{padding:12px 16px}
+.gr-owner__list{display:flex;flex-direction:column;gap:12px;padding:14px 16px 18px}
+.gr-owner .gr-rv{box-shadow:none;background:rgba(255,255,255,.025)}
+.gr-owner .gr-rv:last-child{position:relative}
+.gr-menu{position:absolute;top:40px;inset-inline-end:12px;z-index:2;display:flex;flex-direction:column;gap:2px;min-width:168px;padding:6px;border-radius:10px;background:#2A3245;border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.gr-menu span{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:6px;font:500 12px/16px var(--font-body);color:#C9D0DC;white-space:nowrap}
+.gr-menu span svg{width:14px;height:14px}
+.gr-menu span.on{background:var(--accent-16);color:#fff;font-weight:700}
+.gr-menu span.on svg{color:var(--accent)}
+@media (max-width:575.98px){.gr-menu{top:36px;min-width:150px}.gr-sh__grid{grid-template-columns:30px minmax(0,1fr) minmax(0,1fr)}.gr-sh__grid > .u,.gr-sh__grid > .h:nth-child(2){display:none}}
+@media (max-width:575.98px){.gr-sum li{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}.gr-sum li > b{grid-column:1 / -1}.gr-sum li > .gr-st{justify-self:start}}
+
+/* ---- topic / guide page hero visuals (scenes.hero_visual) ---- */
+.gr-rv--check{box-shadow:none;background:rgba(255,255,255,.03)}
+.gr-pol > * + *{margin-top:12px}
+.gr-pol > .gr-pol__rules{margin-top:10px}
+.gr-pol__rules--ok li{color:#B9C1D0}
+.gr-pol__rules--ok li span i{background:rgba(255,255,255,.08);color:#9AA3B5}
+.gr-verdict--stay{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16)}
+.gr-verdict--stay svg{color:#B0B9CB}
+/* map: your pin and a rival's pin */
+.gr-map{position:relative;height:118px;border-radius:10px;overflow:hidden;border:1px solid var(--ui-line);background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 1.4px) 0 0/14px 14px,#10151F}
+.gr-map__roads{position:absolute;inset:0;width:100%;height:100%}
+.gr-pin{position:absolute;display:flex;align-items:center;gap:7px;padding:4px 10px 4px 4px;padding-inline:4px 10px;border-radius:999px;font:600 11.5px/15px var(--font-body);white-space:nowrap;box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.gr-pin i{flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gr-pin i svg{width:13px;height:13px}
+.gr-pin b{font-weight:600}
+.gr-pin--you{inset-inline-start:7%;top:46px;background:var(--accent);color:var(--accent-ink)}
+.gr-pin--you i{background:var(--accent-ink);color:var(--accent)}
+.gr-pin--rival{inset-inline-end:6%;top:16px;background:#2A3245;color:#E6EAF2;border:1px solid rgba(255,255,255,.14)}
+.gr-pin--rival i{background:#F87171;color:#fff}
+/* staff badge linked to the review */
+.gr-staff{position:relative;display:flex;align-items:center;gap:12px;padding:14px 14px 12px;border-radius:12px;background:#F2F4F8;color:#1F2430}
+.gr-staff__clip{position:absolute;top:-5px;left:50%;width:34px;height:8px;margin-left:-17px;border-radius:4px;background:#8D98AF}
+.gr-staff .gr-av{width:38px;height:38px;font-size:14px}
+.gr-staff__who{flex:1 1 auto;min-width:0}
+.gr-staff__who b{display:block;font:700 13.5px/17px var(--font-body);color:#111827;direction:ltr;unicode-bidi:isolate;text-align:left}
+.gr-staff__who small{display:block;margin-top:2px;font:400 11.5px/16px var(--font-body);color:#4B5563}
+.gr-staff__role{flex:0 0 auto;padding:3px 9px;border-radius:999px;background:#111827;color:#fff;font:700 10.5px/14px var(--font-body);letter-spacing:.3px;text-transform:uppercase}
+.gr-staff__link{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:8px!important;font:600 11.5px/15px var(--font-body);color:var(--accent)}
+.gr-staff__link svg{width:14px;height:14px}
+.gr-staff__link + .gr-in{margin-top:8px!important}
+/* the same words on several profiles */
+.gr-stack__label{display:flex;align-items:center;gap:8px;font:600 12px/16px var(--font-body);color:#C9D0DC}
+.gr-stack__label svg{flex:0 0 15px;width:15px;height:15px;color:var(--accent)}
+.gr-stack{position:relative;padding-top:52px}
+.gr-stack__card{position:absolute;inset-inline:20px;top:0;display:flex;align-items:flex-start;gap:9px;height:60px;padding:6px 12px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#1A2030;opacity:.6}
+.gr-stack__card--2{top:24px;inset-inline:10px;opacity:.85;background:#1E2536}
+.gr-stack__card .gr-av{width:22px;height:22px;font-size:10px}
+.gr-stack__card .gr-rv__who{flex-direction:row;align-items:center;gap:8px}
+.gr-stack__card small{min-width:0;overflow:hidden;text-overflow:ellipsis;font:400 11px/15px var(--font-body);color:#8D98AF;white-space:nowrap}
+.gr-stack__card .gr-rv__who b{flex:0 0 auto;overflow:visible;font-size:12px}
+.gr-stack__card .gr-stars{margin-inline-start:auto}
+.gr-stack .gr-rv{position:relative;background:#1F2638;box-shadow:0 -10px 24px rgba(0,0,0,.35)}
+/* Google's report menu */
+.gr-rep{border-radius:12px;background:#F7F8FA;color:#1F2430;padding:14px 14px 12px}
+.gr-rep__hd{display:flex;align-items:center;gap:8px}
+.gr-rep__hd svg{width:16px;height:16px;color:#1F2430}
+.gr-rep__hd b{font:700 13.5px/18px var(--font-body);color:#111827}
+.gr-rep__q{margin-top:4px;font:400 12px/17px var(--font-body);color:#4B5563}
+.gr-rep__opts{margin-top:8px}
+.gr-rep__opts li{display:flex;align-items:center;gap:10px;padding:6px 4px;border-radius:7px;font:500 12.5px/16px var(--font-body);color:#374151}
+.gr-rep__opts li i{flex:0 0 16px;width:16px;height:16px;border-radius:50%;border:1.5px solid #9CA3AF}
+.gr-rep__opts li.on{background:rgb(var(--accent-rgb) / .16);color:#111827;font-weight:700}
+.gr-rep__opts li.on i{border:5px solid var(--accent-on-light)}
+.gr-rep__ft{display:flex;justify-content:flex-end;margin-top:8px}
+.gr-rep__btn{display:inline-flex;padding:6px 14px;border-radius:999px;background:var(--accent-on-light);color:#fff;font:700 11.5px/15px var(--font-body)}
+/* owner reply being written */
+.gr-reply{border-radius:12px;background:#F7F8FA;color:#1F2430;padding:12px 14px}
+.gr-reply__hd{display:flex;align-items:center;gap:8px}
+.gr-reply__hd svg{width:16px;height:16px;color:var(--accent-on-light)}
+.gr-reply__hd b{font:700 12.5px/17px var(--font-body);color:#111827}
+.gr-reply__txt{margin-top:8px;padding:9px 11px;border-radius:8px;border:1px solid #D1D5DB;background:#fff;font:400 12px/18px var(--font-body);color:#374151}
+.gr-reply__ft{display:flex;justify-content:flex-end;margin-top:8px}
+/* report outcome line */
+.gr-outcome{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;border:1px solid var(--ui-line);background:rgba(255,255,255,.03);font:600 12px/16px var(--font-body);color:#D5DAE4}
+.gr-outcome svg{flex:0 0 16px;width:16px;height:16px;color:#B0B9CB}
+.gr-outcome span{flex:1 1 auto;min-width:0}
+/* the business above the review (industry pages) */
+.gr-biz{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;border:1px solid var(--accent-28);background:linear-gradient(120deg,rgba(var(--accent-rgb) / .1),rgba(var(--accent-rgb) / .02))}
+.gr-biz__ic{flex:0 0 42px;width:42px;height:42px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center}
+.gr-biz__ic svg{width:23px;height:23px}
+.gr-biz__who b{display:block;font:700 13.5px/17px var(--font-body);color:#fff}
+.gr-biz__who small{display:block;margin-top:2px;font:500 12px/16px var(--font-body);color:#B0B9CB}
+/* =====================================================================
+   Urdu (site.js sets lang="ur" dir="rtl" on <html> and #gr-root).
+   Latin letters and digits stay in Archivo; Urdu letters fall through to Noto Nastaliq Urdu.
+   Nastaliq reads small and sits tall, so text is sized up and gets generous line heights,
+   letter spacing is removed (it breaks joined script) and uppercase is irrelevant.
+   The layout mirrors through dir="rtl" plus the logical properties used everywhere else.
+   ===================================================================== */
+#gr-root[lang="ur"]{
+  --font-body:'Archivo','Noto Nastaliq Urdu',serif;
+  --font-alt:'Archivo','Noto Nastaliq Urdu',serif;
+  --font-display:'Noto Nastaliq Urdu','Archivo',serif;
+  --fs-hero:34px; --lh-hero:1.85;
+  --fs-h1:32px;   --lh-h1:1.8;
+  --fs-h2:29px;   --lh-h2:1.8;
+  --fs-h3:27px;   --lh-h3:1.8;
+  --fs-tile:21px; --lh-tile:1.75;
+  --fs-lead:17px; --lh-lead:2;
+  --fs-card-title:19px; --lh-card-title:1.8; --fs-faq:17px; --lh-faq:1.85;
+}
+@media (min-width:992px){
+  #gr-root[lang="ur"]{
+    --fs-hero:56px; --lh-hero:1.8;
+    --fs-h1:46px;   --lh-h1:1.75;
+    --fs-h2:42px;   --lh-h2:1.75;
+    --fs-h3:38px;   --lh-h3:1.75;
+    --fs-tile:24px; --lh-tile:1.7;
+    --fs-lead:19px; --lh-lead:2;
+    --fs-card-title:23px; --lh-card-title:1.75; --fs-faq:18.5px; --lh-faq:1.85;
+  }
+}
+#gr-root[lang="ur"] *,#gr-root[lang="ur"] *::before,#gr-root[lang="ur"] *::after{letter-spacing:0!important}
+#gr-root[lang="ur"] .gr-display{font-weight:700;text-transform:none}
+#gr-root[lang="ur"] .gr-pd{font-size:1em;margin:0}
+#gr-root[lang="ur"] h1,#gr-root[lang="ur"] h2,#gr-root[lang="ur"] h3,#gr-root[lang="ur"] .gr-acc__q span,#gr-root[lang="ur"] .gr-tile b{text-wrap:balance}
+#gr-root[lang="ur"] p,#gr-root[lang="ur"] li{text-wrap:pretty}
+
+/* things that stay left to right inside Urdu */
+#gr-root[dir="rtl"] .gr-logo,#gr-root[dir="rtl"] .gr-ltr,#gr-root[dir="rtl"] .gr-url,#gr-root[dir="rtl"] .gr-lang{direction:ltr}
+#gr-root[dir="rtl"] .gr-arrow,#gr-root[dir="rtl"] .gr-rcard span svg{transform:scaleX(-1)}
+#gr-root[dir="rtl"] .gr-hero::before{left:auto;right:calc(50% + 280px);transform:scaleX(-1)}
+#gr-root[dir="rtl"] .gr-cta::before{left:auto;right:0;transform:scaleX(-1)}
+
+/* type: body and UI */
+#gr-root[lang="ur"]{font-size:17px;line-height:2}
+#gr-root[lang="ur"] .gr-kicker{font-size:16px;line-height:1.9;font-weight:600;text-transform:none;margin-bottom:10px}
+#gr-root[lang="ur"] .gr-kicker--caps{font-size:16px;font-weight:700}
+#gr-root[lang="ur"] .gr-body{font-size:16.5px;line-height:2}
+/* Nastaliq ink spills well outside its line box: section heads need more air between the title and its lead */
+#gr-root[lang="ur"] .gr-head .gr-display + .gr-lead,#gr-root[lang="ur"] .gr-head .gr-display + .gr-body{margin-top:24px}
+#gr-root[lang="ur"] .gr-head .gr-h1 + .gr-lead,#gr-root[lang="ur"] .gr-head .gr-h1 + .gr-body{margin-top:28px}
+#gr-root[lang="ur"] .gr-phero__in .gr-display + p,#gr-root[lang="ur"] .gr-split__txt .gr-display + p,#gr-root[lang="ur"] .gr-founder__txt p:first-of-type{margin-top:26px}
+#gr-root[lang="ur"] .gr-cta__line{margin-top:22px}
+#gr-root[lang="ur"] .gr-btn{font-size:16px;line-height:1.75;font-weight:700;padding:8px 26px 10px}
+#gr-root[lang="ur"] .gr-btn--nav{padding:7px 18px 9px;font-size:15px}
+#gr-root[lang="ur"] .gr-btn--footer{font-size:15px;line-height:1.7;padding:8px 22px 10px}
+#gr-root[lang="ur"] .gr-plain{font-size:16px;line-height:1.9}
+#gr-root[lang="ur"] .gr-chip{font-size:13.5px;line-height:1.75;padding:2px 12px 4px}
+
+/* nav + off canvas */
+#gr-root[lang="ur"] .gr-nav__links a,#gr-root[lang="ur"] .gr-dd__btn{font-size:15.5px;line-height:1.7;padding:4px 0 6px}
+@media (min-width:1200px){#gr-root[lang="ur"] .gr-nav__links{gap:22px}}
+#gr-root[lang="ur"] .gr-dd__panel a{font-size:16px;line-height:1.75}
+#gr-root[lang="ur"] .gr-oc__links a{font-size:19px;line-height:1.8;padding:9px 0}
+#gr-root[lang="ur"] .gr-oc__sub a{font-size:16px;line-height:1.8;padding:5px 0}
+#gr-root[lang="ur"] .gr-oc__meta{font-size:14.5px;line-height:2}
+#gr-root[lang="ur"] .gr-skip{font-size:15px;line-height:1.8}
+
+/* hero */
+#gr-root[lang="ur"] .gr-badge{padding-block:4px}
+#gr-root[lang="ur"] .gr-badge h1{font-size:17px;line-height:1.9}
+@media (max-width:575.98px){#gr-root[lang="ur"] .gr-badge h1{font-size:14px;line-height:1.85}}
+#gr-root[lang="ur"] .gr-hero__title{margin-top:32px;margin-bottom:28px}
+#gr-root[lang="ur"] .gr-hero__p{font-size:18px;line-height:2.05;margin-top:0}
+#gr-root[lang="ur"] .gr-strip__label{font-size:12.5px;line-height:1.6;min-height:20px;margin-bottom:12px}
+#gr-root[lang="ur"] .gr-strip__note{font-size:14px;line-height:1.9}
+#gr-root[lang="ur"] .gr-rv__reply b{font-size:12px;line-height:1.7}
+#gr-root[lang="ur"] .gr-rv__reply p{font-size:13px;line-height:1.85}
+
+/* sections */
+#gr-root[lang="ur"] .gr-numlist h3{font-size:var(--fs-card-title);line-height:var(--lh-card-title)}
+#gr-root[lang="ur"] .gr-numlist p{font-size:16px;line-height:2;margin-top:8px}
+#gr-root[lang="ur"] .gr-numlist .n{line-height:2.1}
+#gr-root[lang="ur"] .gr-box p{font-size:16.5px;line-height:2.05}
+#gr-root[lang="ur"] .gr-box .gr-display{font-size:calc(var(--fs-h3) * .9);line-height:1.8}
+#gr-root[lang="ur"] .gr-step__top{padding:16px 0}
+#gr-root[lang="ur"] .gr-step:first-child .gr-step__top{padding-top:6px}
+#gr-root[lang="ur"] .gr-step__top h3,#gr-root[lang="ur"] .gr-step__top span{font-size:var(--fs-card-title);line-height:var(--lh-card-title)}
+#gr-root[lang="ur"] .gr-step__body p{font-size:15.5px;line-height:2.05}
+#gr-root[lang="ur"] .gr-bcard__txt h3{font-size:var(--fs-card-title);line-height:var(--lh-card-title);margin-bottom:10px}
+#gr-root[lang="ur"] .gr-bcard__txt p{font-size:16px;line-height:2.05}
+#gr-root[lang="ur"] .gr-tile b{font-weight:700;text-transform:none}
+#gr-root[lang="ur"] .gr-tile small{font-size:14px;line-height:1.9}
+#gr-root[lang="ur"] .gr-wwd__cols h3{font-size:23px;line-height:1.8}
+#gr-root[lang="ur"] .gr-wwd__cols > div > p,#gr-root[lang="ur"] .gr-ticks li{font-size:16px;line-height:2}
+#gr-root[lang="ur"] .gr-ticks li svg{top:12px}
+#gr-root[lang="ur"] .gr-founder__name{font-size:22px;line-height:1.8}
+#gr-root[lang="ur"] .gr-founder__role{font-size:14px;line-height:1.8}
+#gr-root[lang="ur"] .gr-founder__facts li{font-size:15.5px;line-height:1.9}
+#gr-root[lang="ur"] .gr-founder__txt p{font-size:17.5px;line-height:2.1}
+#gr-root[lang="ur"] .gr-founder__sign small{font-size:14px;line-height:1.9}
+#gr-root[lang="ur"] .gr-acc__q{padding:14px 20px}
+#gr-root[lang="ur"] .gr-acc__a > div{font-size:16px;line-height:2.05}
+#gr-root[lang="ur"] .gr-cta__line{font-size:17px;line-height:2}
+#gr-root[lang="ur"] .gr-cta__meta{font-size:14.5px;line-height:1.9}
+#gr-root[lang="ur"] .gr-phero__in p,#gr-root[lang="ur"] .gr-split__txt p{font-size:17.5px;line-height:2.05}
+#gr-root[lang="ur"] .gr-gcard h3{font-size:21px;line-height:1.8;text-transform:none}
+#gr-root[lang="ur"] .gr-gcard p,#gr-root[lang="ur"] .gr-ncard p,#gr-root[lang="ur"] .gr-rcard p{font-size:15px;line-height:2}
+#gr-root[lang="ur"] .gr-ncard h3,#gr-root[lang="ur"] .gr-rcard h3{font-size:19px;line-height:1.8}
+#gr-root[lang="ur"] .gr-pair__card h3{font-size:20px;line-height:1.8}
+#gr-root[lang="ur"] .gr-pair__card li,#gr-root[lang="ur"] .gr-prose p,#gr-root[lang="ur"] .gr-prose li{font-size:16.5px;line-height:2.05}
+#gr-root[lang="ur"] .gr-prose h3{font-size:22px;line-height:1.8}
+#gr-root[lang="ur"] .gr-crumbs ol{font-size:15.5px;line-height:1.8}
+
+/* footer */
+#gr-root[lang="ur"] .gr-footer__blurb{font-size:14.5px;line-height:2}
+#gr-root[lang="ur"] .gr-footer__contact small{font-size:14px;line-height:1.8}
+#gr-root[lang="ur"] .gr-footer__contact b{font-size:16px;line-height:1.9}
+#gr-root[lang="ur"] .gr-footer__menus h4{font-size:18px;line-height:1.8;font-weight:700}
+#gr-root[lang="ur"] .gr-footer__menus a{font-size:16px;line-height:1.8}
+#gr-root[lang="ur"] .gr-footer__menus li + li{margin-top:8px}
+#gr-root[lang="ur"] .gr-footer__mini p,#gr-root[lang="ur"] .gr-footer__line{font-size:14px;line-height:2}
+#gr-root[lang="ur"] .gr-footer__endlinks a{font-size:15px;line-height:1.8}
+#gr-root[lang="ur"] .gr-footer__legal{font-size:14px;line-height:2}
+#gr-root[lang="ur"] .gr-footer__base p,#gr-root[lang="ur"] .gr-footer__base a{font-size:13.5px;line-height:1.9}
+
+/* UI illustrations */
+#gr-root[lang="ur"] .gr-ui{line-height:1.7}
+#gr-root[lang="ur"] .gr-ex{font-size:11px;line-height:1.6;padding:0 9px 2px}
+#gr-root[lang="ur"] .gr-st{font-size:11.5px;line-height:1.6;padding:1px 9px 3px}
+#gr-root[lang="ur"] .gr-tag{font-size:11.5px;line-height:1.7;padding:1px 8px 3px}
+#gr-root[lang="ur"] .gr-rv__txt{font-size:13.5px;line-height:1.95}
+#gr-root[lang="ur"] .gr-strip .gr-rv__txt{font-size:14px;line-height:2}
+@media (min-width:576px){#gr-root[lang="ur"] .gr-strip .gr-rv{height:268px}}
+#gr-root[lang="ur"] .gr-panel__bar b{font-size:14px;line-height:1.7}
+#gr-root[lang="ur"] .gr-panel__foot{font-size:13px;line-height:1.8}
+#gr-root[lang="ur"] .gr-tri__main p{font-size:13px;line-height:1.9}
+#gr-root[lang="ur"] .gr-pol__rules li{font-size:13px;line-height:1.7;padding:5px 2px}
+#gr-root[lang="ur"] .gr-pol__res{font-size:11.5px;line-height:1.6}
+#gr-root[lang="ur"] .gr-verdict,#gr-root[lang="ur"] .gr-sum__total{font-size:13.5px;line-height:1.8;padding:7px 12px 9px}
+#gr-root[lang="ur"] .gr-trk__main b,#gr-root[lang="ur"] .gr-sum li > b{font-size:13.5px;line-height:1.7}
+#gr-root[lang="ur"] .gr-trk li{padding:7px 0}
+#gr-root[lang="ur"] .gr-sum li{padding:7px 0}
+#gr-root[lang="ur"] .gr-pay{font-size:12.5px;line-height:1.7}
+#gr-root[lang="ur"] .gr-sheet-ui > b{font-size:11.5px;line-height:1.7}
+#gr-root[lang="ur"] .gr-sheet-ui__opts span{font-size:9.5px;line-height:1.6;white-space:nowrap}
+#gr-root[lang="ur"] .gr-toast{font-size:10.5px;line-height:1.6;padding:2px 11px 4px}
+#gr-root[lang="ur"] .gr-bub{font-size:12.5px;line-height:1.9}
+#gr-root[lang="ur"] .gr-sh__grid{font-size:12px}
+#gr-root[lang="ur"] .gr-sh__grid > span.h{font-size:11.5px;text-transform:none}
+#gr-root[lang="ur"] .gr-sh__more{font-size:12px;line-height:1.8}
+#gr-root[lang="ur"] .gr-chat__bar small{font-size:11.5px;line-height:1.6}
+#gr-root[lang="ur"] .gr-wl__label{font-size:11.5px;line-height:1.6;text-transform:none}
+#gr-root[lang="ur"] .gr-wl__card p{font-size:13.5px;line-height:1.9}
+#gr-root[lang="ur"] .gr-wl__from b{font-size:13.5px;line-height:1.6}
+#gr-root[lang="ur"] .gr-hours__top b{font-size:15px;line-height:1.7}
+#gr-root[lang="ur"] .gr-live{font-size:11.5px;line-height:1.6;padding:1px 10px 3px}
+#gr-root[lang="ur"] .gr-hours dt{font-size:13.5px;line-height:1.8}
+#gr-root[lang="ur"] .gr-hours dd{font-size:14.5px;line-height:1.8}
+#gr-root[lang="ur"] .gr-hours dl > div{padding:6px 0}
+#gr-root[lang="ur"] .gr-menu span{font-size:13px;line-height:1.6}
+#gr-root[lang="ur"] .gr-phone__hd{font-size:11.5px;line-height:1.6}
+#gr-root[lang="ur"] .gr-phone .gr-rv__txt{font-size:11.5px;line-height:1.8}
+#gr-root[lang="ur"] .gr-phone .gr-ex{font-size:9.5px;padding:0 7px 2px}
+#gr-root[lang="ur"] .gr-oc__label{font-size:19px;line-height:1.8;padding:9px 0}
+#gr-root[lang="ur"] .gr-gcard__more{font-size:15px;line-height:1.8}
+#gr-root[lang="ur"] .gr-live--note{font-size:12px}
+/* page hero visuals */
+#gr-root[lang="ur"] .gr-pin{font-size:12.5px;line-height:1.7}
+#gr-root[lang="ur"] .gr-staff__who small{font-size:12.5px;line-height:1.8}
+#gr-root[lang="ur"] .gr-staff__role{font-size:12px;line-height:1.6;text-transform:none}
+#gr-root[lang="ur"] .gr-staff__link,#gr-root[lang="ur"] .gr-stack__label{font-size:13px;line-height:1.7}
+#gr-root[lang="ur"] .gr-stack__card small{font-size:12px;line-height:1.6}
+#gr-root[lang="ur"] .gr-rep__hd b,#gr-root[lang="ur"] .gr-reply__hd b{font-size:14px;line-height:1.7}
+#gr-root[lang="ur"] .gr-rep__q{font-size:13px;line-height:1.8}
+#gr-root[lang="ur"] .gr-rep__opts li{font-size:13.5px;line-height:1.7;padding:4px}
+#gr-root[lang="ur"] .gr-rep__btn{font-size:12.5px;line-height:1.6;padding:4px 14px 6px}
+#gr-root[lang="ur"] .gr-reply__txt{font-size:13.5px;line-height:1.9}
+#gr-root[lang="ur"] .gr-outcome{font-size:13px;line-height:1.7}
+#gr-root[lang="ur"] .gr-biz__who b{font-size:14.5px;line-height:1.7}
+#gr-root[lang="ur"] .gr-biz__who small{font-size:13px;line-height:1.7}
+
+/* phones: Nastaliq inside the (scaled) strip stays at 13px or more on screen */
+@media (max-width:575.98px){#gr-root[lang="ur"] .gr-strip .gr-rv{height:300px}#gr-root[lang="ur"] .gr-strip .gr-rv__txt{font-size:15px}#gr-root[lang="ur"] .gr-strip .gr-rv__reply p{font-size:15px}
+  #gr-root[lang="ur"] .gr-strip__label,#gr-root[lang="ur"] .gr-strip .gr-tag,#gr-root[lang="ur"] .gr-strip .gr-st,#gr-root[lang="ur"] .gr-strip .gr-rv__reply b{font-size:14.5px}}
+@media (max-width:575.98px){
+  #gr-root[lang="ur"] .gr-phero__vis .gr-sh__grid{font-size:14px}
+  #gr-root[lang="ur"] .gr-phero__vis .gr-sh__grid > span.h,#gr-root[lang="ur"] .gr-phero__vis .gr-sh__grid > span.n{font-size:13px}
+  #gr-root[lang="ur"] .gr-phero__vis .gr-st,#gr-root[lang="ur"] .gr-phero__vis .gr-sh__more{font-size:13px}
+  #gr-root[lang="ur"] .gr-pin,#gr-root[lang="ur"] .gr-staff__who small,#gr-root[lang="ur"] .gr-staff__role,#gr-root[lang="ur"] .gr-stack__card small,#gr-root[lang="ur"] .gr-stack__card .gr-rv__who b{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div id="gr-root" lang="en" dir="ltr" data-page="not-found">
+<script>(function(){try{var m=/[?&]lang=([a-z]{2})(?:&|#|$)/i.exec(location.search),D={"ur": "rtl"},l=m?m[1].toLowerCase():null;if(l==="en")return;if(!D[l]){l=null;try{l=localStorage.getItem("gr-lang")}catch(e){}}if(!l||!D[l])return;var h=document.documentElement,r=document.getElementById("gr-root");h.classList.add("gr-pending");h.lang=l;h.dir=D[l];if(r){r.lang=l;r.dir=D[l]}if(!document.getElementById("gr-urdu-css")){var c=document.createElement("link");c.id="gr-urdu-css";c.rel="stylesheet";c.href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap";document.head.appendChild(c)}setTimeout(function(){h.classList.remove("gr-pending")},2500)}catch(e){}})();</script>
+<a class="gr-skip" href="#main"><span data-i18n="nav.skip">Skip to content</span></a>
+<header class="gr-nav" id="top">
+  <div class="gr-container gr-nav__in">
+    <a class="gr-nav__logo" href="/" aria-label="Good Rating home" data-i18n-attr="aria-label:brand.home_aria"><span class="gr-logo "><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><mask id="grm-lg1"><rect width="100" height="100" fill="#fff"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#000" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><path mask="url(#grm-lg1)" fill="#FFB020" d="M50 4 61.46 34.22 93.75 35.79 68.55 56.03 77.04 87.21 50 69.5 22.96 87.21 31.45 56.03 6.25 35.79 38.54 34.22Z"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#FFB020" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="gr-logo__word"><b>Good</b><i>Rating</i></span></span></a>
+    <nav class="gr-nav__links" aria-label="Main" data-i18n-attr="aria-label:nav.aria"><a href="/"><span data-i18n="nav.home">Home</span></a><a href="/review-removal"><span data-i18n="nav.removal">Review Removal</span></a><a href="/local-seo"><span data-i18n="nav.agencies">For Agencies</span></a><div class="gr-dd" data-gr-dd><button class="gr-dd__btn" type="button" aria-expanded="false" aria-controls="gr-dd-3"><span data-i18n="nav.learn">Learn</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><div class="gr-dd__panel gr-dd__panel--one" id="gr-dd-3"><a href="/review-types"><span data-i18n="nav.types">Review Types</span></a><a href="/industries"><span data-i18n="nav.industries">Industries</span></a><a href="/guides"><span data-i18n="nav.guides">Guides</span></a></div></div><a href="/about"><span data-i18n="nav.about">About</span></a><a href="/contact"><span data-i18n="nav.contact">Contact</span></a></nav>
+    <div class="gr-nav__right">
+      <div class="gr-lang" role="group" aria-label="Choose a language" data-i18n-attr="aria-label:nav.lang_aria"><button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="ur" lang="ur" aria-pressed="false">اردو</button></div>
+      <a class="gr-btn gr-btn--accent gr-btn--nav gr-nav__wa" data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg><span data-i18n="cta.wa_short">WhatsApp Us</span></a>
+      <button class="gr-nav__toggle" id="gr-oc-open" type="button" aria-controls="gr-oc" aria-expanded="false" aria-label="Open menu" data-i18n-attr="aria-label:nav.menu_open"><svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><path d="M4 7.5h22M4 15h22M4 22.5h22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</header>
+<aside class="gr-oc" id="gr-oc" aria-hidden="true" aria-label="Menu" data-i18n-attr="aria-label:nav.menu">
+  <div class="gr-oc__top">
+    <a href="/" aria-label="Good Rating home" data-i18n-attr="aria-label:brand.home_aria"><span class="gr-logo "><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><mask id="grm-lg2"><rect width="100" height="100" fill="#fff"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#000" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><path mask="url(#grm-lg2)" fill="#FFB020" d="M50 4 61.46 34.22 93.75 35.79 68.55 56.03 77.04 87.21 50 69.5 22.96 87.21 31.45 56.03 6.25 35.79 38.54 34.22Z"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#FFB020" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="gr-logo__word"><b>Good</b><i>Rating</i></span></span></a>
+    <button class="gr-oc__close" id="gr-oc-close" type="button" aria-label="Close menu" data-i18n-attr="aria-label:nav.menu_close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <nav class="gr-oc__links" aria-label="Menu links" data-i18n-attr="aria-label:nav.mobile_aria"><a href="/"><span data-i18n="nav.home">Home</span></a><a href="/review-removal"><span data-i18n="nav.removal">Review Removal</span></a><a href="/local-seo"><span data-i18n="nav.agencies">For Agencies</span></a><p class="gr-oc__label"><span data-i18n="nav.learn">Learn</span></p><div class="gr-oc__sub"><a href="/review-types"><span data-i18n="nav.types">Review Types</span></a><a href="/industries"><span data-i18n="nav.industries">Industries</span></a><a href="/guides"><span data-i18n="nav.guides">Guides</span></a></div><a href="/about"><span data-i18n="nav.about">About</span></a><a href="/contact"><span data-i18n="nav.contact">Contact</span></a></nav>
+  <div class="gr-oc__btns">
+    <a class="gr-btn gr-btn--accent" data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg><span data-i18n="cta.wa">Message Us on WhatsApp</span></a>
+    <div class="gr-lang" role="group" aria-label="Choose a language" data-i18n-attr="aria-label:nav.lang_aria"><button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="ur" lang="ur" aria-pressed="false">اردو</button></div>
+  </div>
+  <p class="gr-oc__meta"><b data-i18n="footer.hours_label">Working hours:</b><span data-i18n="hours.short">Mon to Fri, 10:30 AM to 7:00 PM PKT</span></p>
+</aside>
+<div class="gr-oc-backdrop" id="gr-oc-bd"></div>
+<main class="gr-main" id="main">
+<section class="gr-phero"><div class="gr-container"><div class="gr-phero__in"><span class="gr-kicker gr-kicker--accent" data-i18n="not-found.hero.kicker">Page not found</span><h1 class="gr-display" data-i18n="not-found.hero.title">This page does not exist<span class="gr-pd">.</span></h1><p data-i18n="not-found.hero.lead">The link may be old, or a letter may be missing in the address. Pick a page below, or message us on WhatsApp and we will point you to the right place.</p><div class="gr-btns gr-btns--start gr-btns--stack"><a class="gr-btn gr-btn--accent" data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg><span data-i18n="cta.wa">Message Us on WhatsApp</span></a><a class="gr-btn gr-btn--outline" href="/"><span data-i18n="not-found.hero.home">Back to the Home Page</span></a></div></div></div></section>
+<section class="gr-sec gr-bg-900">
+  <div class="gr-container">
+    <div class="gr-head gr-head--wide"><span class="gr-kicker gr-kicker--accent" data-i18n="not-found.grid.kicker">Where to go next</span><h2 class="gr-display gr-h2" data-i18n="not-found.grid.title">Popular pages</h2></div>
+    <div class="gr-grid gr-grid--4"><a class="gr-gcard gr-gcard--link" href="/review-removal"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="review-removal.card.h">Google Review Removal</h3><p data-i18n="review-removal.card.p">What qualifies, how the work runs on WhatsApp, and how you pay only for reviews that get removed.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/local-seo"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="agencies.card.h">Review Removal for Agencies</h3><p data-i18n="agencies.card.p">Send links in bulk, pass the updates on under your own name, and pay only for reviews that get removed.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/how-review-removal-works"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="how-review-removal-works.card.h">How Review Removal Works</h3><p data-i18n="how-review-removal-works.card.p">Every step from the first link you send to the last update, and when you pay.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/review-types"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="review-types.card.h">Review Types We Work On</h3><p data-i18n="review-types.card.p">Fake, spam, competitor, offensive and other reviews that break Google's rules.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/industries"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="industries.card.h">Review Removal By Industry</h3><p data-i18n="industries.card.p">How fake and rule breaking reviews show up in your kind of business.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/guides"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="guides.card.h">Google Review Guides</h3><p data-i18n="guides.card.p">Plain answers on reporting, Google's policy, replies and turned down reports.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/about"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="about.card.h">About Good Rating</h3><p data-i18n="about.card.p">Founder Arslan Zafar, the team in Pakistan, and the way we work with every client.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="gr-gcard gr-gcard--link" href="/contact"><span class="gr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><h3 data-i18n="contact.card.h">Contact Good Rating</h3><p data-i18n="contact.card.p">WhatsApp only, Monday to Friday on Pakistan time, in English or Urdu.</p><span class="gr-gcard__more"><span data-i18n="cta.read">Read more</span><svg class="gr-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    
+  </div>
+</section>
+<section class="gr-cta" id="start">
+  <div class="gr-container">
+    <div class="gr-cta__box">
+      <div class="gr-cta__txt">
+      <h2 class="gr-display" data-i18n="final.title">Send us the links<span class="gr-pd">.</span></h2>
+      <p class="gr-cta__line" data-i18n="final.line">Message us on WhatsApp with the reviews you want gone. We check each one, send a quote, and you pay only for reviews that get removed.</p>
+      <div class="gr-btns"><a class="gr-btn gr-btn--accent" data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg><span data-i18n="cta.wa">Message Us on WhatsApp</span></a></div>
+      <div class="gr-cta__meta"><span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg><span class="gr-ltr">+92 346 266 2763</span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span data-i18n="hours.short">Mon to Fri, 10:30 AM to 7:00 PM PKT</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="gr-footer">
+  <div class="gr-container gr-footer__top">
+    <div class="gr-footer__brand">
+      <a href="/" aria-label="Good Rating home" data-i18n-attr="aria-label:brand.home_aria"><span class="gr-logo gr-logo--lg"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><mask id="grm-lg3"><rect width="100" height="100" fill="#fff"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#000" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><path mask="url(#grm-lg3)" fill="#FFB020" d="M50 4 61.46 34.22 93.75 35.79 68.55 56.03 77.04 87.21 50 69.5 22.96 87.21 31.45 56.03 6.25 35.79 38.54 34.22Z"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#FFB020" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="gr-logo__word"><b>Good</b><i>Rating</i></span></span></a>
+      <p class="gr-footer__blurb" data-i18n="footer.blurb">Google review removal for business owners and agencies. We report reviews that break Google's rules, and you pay only for the ones that get removed.</p>
+      <div class="gr-footer__contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg><div><small data-i18n="footer.wa_label">Message us on WhatsApp:</small><a data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener"><span class="gr-ltr">+92 346 266 2763</span></a></div></div>
+      <div class="gr-footer__contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><div><small data-i18n="footer.hours_label">Working hours:</small><b data-i18n="hours.short">Mon to Fri, 10:30 AM to 7:00 PM PKT</b></div></div>
+    </div>
+    <div class="gr-footer__menus"><div><h4 data-i18n="footer.col_services">Services</h4><ul><li><a href="/review-removal"><span data-i18n="nav.removal">Review Removal</span></a></li><li><a href="/local-seo"><span data-i18n="nav.agencies">For Agencies</span></a></li><li><a href="/#remove"><span data-i18n="footer.what">What We Remove</span></a></li><li><a href="/#how"><span data-i18n="footer.how">How It Works</span></a></li></ul></div><div><h4 data-i18n="footer.col_company">Company</h4><ul><li><a href="/about"><span data-i18n="nav.about">About</span></a></li><li><a href="/contact"><span data-i18n="nav.contact">Contact</span></a></li><li><a href="/#founder"><span data-i18n="footer.founder">Our Founder</span></a></li><li><a href="/#faq"><span data-i18n="footer.faq">FAQ</span></a></li></ul></div><div><h4 data-i18n="footer.col_learn">Learn</h4><ul><li><a href="/review-types"><span data-i18n="nav.types">Review Types</span></a></li><li><a href="/industries"><span data-i18n="nav.industries">Industries</span></a></li><li><a href="/guides"><span data-i18n="nav.guides">Guides</span></a></li></ul></div></div>
+  </div>
+  <div class="gr-footer__end">
+    <div class="gr-container">
+      <div class="gr-footer__bar">
+        <div class="gr-footer__mini"><span class="gr-logo "><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><mask id="grm-lg4"><rect width="100" height="100" fill="#fff"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#000" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><path mask="url(#grm-lg4)" fill="#FFB020" d="M50 4 61.46 34.22 93.75 35.79 68.55 56.03 77.04 87.21 50 69.5 22.96 87.21 31.45 56.03 6.25 35.79 38.54 34.22Z"/><path d="M29 53 43.5 67.5 73 33" fill="none" stroke="#FFB020" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="gr-logo__word"><b>Good</b><i>Rating</i></span></span><p data-i18n="footer.mini">Google review removal for businesses and agencies.</p></div>
+        <nav class="gr-footer__endlinks" aria-label="Footer" data-i18n-attr="aria-label:nav.footer_aria"><a href="/"><span data-i18n="nav.home">Home</span></a><a href="/review-removal"><span data-i18n="nav.removal">Review Removal</span></a><a href="/local-seo"><span data-i18n="nav.agencies">For Agencies</span></a><a href="/about"><span data-i18n="nav.about">About</span></a><a href="/contact"><span data-i18n="nav.contact">Contact</span></a></nav>
+        <div class="gr-footer__cta"><span class="gr-display">+92 346 266 2763</span><a class="gr-btn gr-btn--footer" data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener"><span data-i18n="cta.wa_short">WhatsApp Us</span></a></div>
+      </div>
+      <p class="gr-footer__line" data-i18n="footer.line">Team based in Pakistan. Monday to Friday, 10:30 AM to 7:00 PM Pakistan time (PKT). Support in English and Urdu.</p>
+      <p class="gr-footer__legal" data-i18n="footer.legal">Good Rating is an independent service and is not affiliated with Google. Google is a trademark of Google LLC.</p>
+      <div class="gr-footer__base"><p>&copy; 2026 <span data-i18n="footer.copy">Good Rating. All rights reserved.</span></p><a href="#top" data-gr-top><span data-i18n="footer.top">Back to top</span></a></div>
+    </div>
+  </div>
+</footer>
+<a class="gr-fab" data-wa href="https://wa.me/923462662763?text=Hi%2C%20I%20want%20to%20remove%20some%20Google%20reviews" target="_blank" rel="noopener" aria-label="Message Us on WhatsApp" data-i18n-attr="aria-label:cta.wa"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg></a>
+</div>
+<script type="application/json" id="gr-i18n">{"ur":{"dir":"rtl","title":"صفحہ نہیں ملا | Good Rating","wa":"https://wa.me/923462662763?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%DB%8C%DA%A9%D9%85%D8%8C%20%D9%85%D8%AC%DA%BE%DB%92%20%DA%A9%DA%86%DA%BE%20%DA%AF%D9%88%DA%AF%D9%84%20%D8%B1%DB%8C%D9%88%DB%8C%D9%88%D8%B2%20%DB%81%D9%B9%D9%88%D8%A7%D9%86%DB%92%20%DB%81%DB%8C%DA%BA","font":"Noto Nastaliq Urdu","s":{"about.card.h":"گڈ ریٹنگ کا تعارف","about.card.p":"بانی ارسلان ظفر، پاکستان میں ہماری ٹیم، اور ہر کلائنٹ کے ساتھ ہمارا طریقہ کار۔","agencies.card.h":"ایجنسیوں کے لیے ریویوز ہٹوانا","agencies.card.p":"لنکس بلک میں بھیجیں، اپڈیٹس اپنے نام سے آگے پہنچائیں، اور ادائیگی صرف ان ریویوز کی جو ہٹ جائیں۔","brand.home_aria":"گڈ ریٹنگ، ہوم پیج","contact.card.h":"گڈ ریٹنگ سے رابطہ","contact.card.p":"صرف واٹس ایپ، پیر سے جمعہ پاکستانی وقت کے مطابق، انگریزی یا اردو میں۔","cta.read":"مزید پڑھیں","cta.wa":"واٹس ایپ پر پیغام بھیجیں","cta.wa_short":"واٹس ایپ کریں","final.line":"جو ریویوز آپ ہٹوانا چاہتے ہیں، ان کے لنکس واٹس ایپ پر بھیجیں۔ ہم ہر ایک کو جانچ کر قیمت بتاتے ہیں، اور آپ صرف ان ریویوز کی ادائیگی کرتے ہیں جو ہٹ جائیں۔","final.title":"ہمیں لنکس بھیجیں۔","footer.blurb":"کاروباری مالکان اور ایجنسیوں کے لیے گوگل ریویوز ہٹوانے کی سروس۔ ہم گوگل کے قواعد توڑنے والے ریویوز رپورٹ کرتے ہیں، اور آپ صرف ان ریویوز کی ادائیگی کرتے ہیں جو ہٹ جائیں۔","footer.col_company":"کمپنی","footer.col_learn":"معلومات","footer.col_services":"سروسز","footer.copy":"گڈ ریٹنگ۔ جملہ حقوق محفوظ ہیں۔","footer.faq":"سوالات","footer.founder":"ہمارے بانی","footer.hours_label":"اوقاتِ کار:","footer.how":"طریقہ کار","footer.legal":"گڈ ریٹنگ ایک آزاد سروس ہے اور اس کا گوگل سے کوئی تعلق نہیں۔ گوگل، Google LLC کا ٹریڈ مارک ہے۔","footer.line":"ہماری ٹیم پاکستان میں ہے۔ پیر سے جمعہ، صبح 10:30 سے شام 7:00 بجے تک (پاکستانی وقت)۔ انگریزی اور اردو میں مدد۔","footer.mini":"کاروباروں اور ایجنسیوں کے لیے گوگل ریویوز ہٹوانے کی سروس۔","footer.top":"اوپر جائیں","footer.wa_label":"واٹس ایپ پر پیغام بھیجیں:","footer.what":"ہم کیا ہٹواتے ہیں","guides.card.h":"گوگل ریویوز کی رہنمائی","guides.card.p":"رپورٹ کرنے، گوگل کی پالیسی، جوابات اور مسترد رپورٹس پر سیدھی باتیں۔","hours.short":"پیر تا جمعہ، صبح 10:30 سے شام 7:00 بجے تک (پاکستانی وقت)","how-review-removal-works.card.h":"ریویو ہٹوانے کا طریقہ کار","how-review-removal-works.card.p":"آپ کے بھیجے گئے پہلے لنک سے آخری اپڈیٹ تک ہر مرحلہ، اور ادائیگی کب ہوتی ہے۔","industries.card.h":"ہر شعبے کے لیے ریویوز ہٹوانا","industries.card.p":"آپ کے کاروبار میں جعلی اور قواعد توڑنے والے ریویوز کس شکل میں آتے ہیں۔","meta.not-found.description":"آپ نے جو صفحہ کھولا وہ اس ویب سائٹ پر موجود نہیں۔ گوگل ریویوز ہٹوانے کی سروس، ریویوز کی اقسام اور کاروبار کے شعبوں کی رہنمائی دیکھیں، یا واٹس ایپ پر ہم سے بات کریں۔","meta.not-found.title":"صفحہ نہیں ملا | Good Rating","nav.about":"تعارف","nav.agencies":"ایجنسیوں کے لیے","nav.aria":"مرکزی مینو","nav.contact":"رابطہ","nav.footer_aria":"فوٹر","nav.guides":"رہنمائی","nav.home":"ہوم","nav.industries":"کاروبار کے شعبے","nav.lang_aria":"زبان منتخب کریں","nav.learn":"معلومات","nav.menu":"مینو","nav.menu_close":"مینو بند کریں","nav.menu_open":"مینو کھولیں","nav.mobile_aria":"مینو کے لنکس","nav.removal":"ریویو ہٹوائیں","nav.skip":"مواد پر جائیں","nav.types":"ریویوز کی اقسام","not-found.grid.kicker":"اب کہاں جائیں","not-found.grid.title":"اہم صفحات","not-found.hero.home":"ہوم پیج پر واپس جائیں","not-found.hero.kicker":"صفحہ نہیں ملا","not-found.hero.lead":"ہو سکتا ہے لنک پرانا ہو یا پتے میں کوئی حرف رہ گیا ہو۔ نیچے سے کوئی صفحہ چنیں، یا واٹس ایپ پر پیغام بھیجیں اور ہم آپ کو صحیح صفحہ بتا دیں گے۔","not-found.hero.title":"یہ صفحہ موجود نہیں۔","og.alt":"گڈ ریٹنگ: ہم جعلی گوگل ریویوز رپورٹ کرتے ہیں، اور آپ صرف ہٹ جانے والے ریویوز کی ادائیگی کرتے ہیں","review-removal.card.h":"گوگل ریویوز ہٹوانا","review-removal.card.p":"کون سے ریویوز اس زمرے میں آتے ہیں، واٹس ایپ پر کام کیسے ہوتا ہے، اور ادائیگی صرف ان ریویوز کی جو ہٹ جائیں۔","review-types.card.h":"ریویوز کی اقسام جن پر ہم کام کرتے ہیں","review-types.card.p":"جعلی، اسپام، حریفوں کے، نازیبا اور دوسرے ریویوز جو گوگل کے قواعد توڑتے ہیں۔","schema.org_desc":"کاروباری مالکان اور ایجنسیوں کے لیے گوگل ریویوز ہٹوانے کی سروس۔ ہم گوگل کے قواعد توڑنے والے ریویوز رپورٹ کرتے ہیں، اور ادائیگی صرف ان ریویوز کی ہوتی ہے جو ہٹ جائیں۔","wa.prefill":"السلام علیکم، مجھے کچھ گوگل ریویوز ہٹوانے ہیں"}}}</script>
+<script>window.GR={"hours": {"tz": "Asia/Karachi", "utc_offset_min": 300, "days": [1, 2, 3, 4, 5], "open": "10:30", "close": "19:00"}, "urduCss": "https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap"};
+/* Good Rating v3 site script (inlined into every page by build.py).
+   Off canvas menu, nav dropdown, FAQ accordion, process steps, floating WhatsApp button, live working hours,
+   back to top, and the EN | اردو language toggle (one URL, client side swap by data-i18n key). */
+(function(){
+  var root=document.getElementById('gr-root'); if(!root) return;
+  var html=document.documentElement;
+  var LANG='en';
+  var I18N={};
+  function emit(){ try{ root.dispatchEvent(new CustomEvent('gr:relayout')); }catch(e){} }
+
+  /* ---------- off canvas menu ---------- */
+  var oc=document.getElementById('gr-oc'),bd=document.getElementById('gr-oc-bd'),op=document.getElementById('gr-oc-open'),cl=document.getElementById('gr-oc-close');
+  function ocOpen(){ oc.classList.add('is-open'); bd.classList.add('is-open'); html.classList.add('gr-lock'); op.setAttribute('aria-expanded','true'); oc.setAttribute('aria-hidden','false'); setTimeout(function(){ cl.focus(); },60); }
+  function ocClose(back){ if(!oc.classList.contains('is-open')) return; oc.classList.remove('is-open'); bd.classList.remove('is-open'); html.classList.remove('gr-lock'); op.setAttribute('aria-expanded','false'); oc.setAttribute('aria-hidden','true'); if(back) op.focus(); }
+  if(oc&&op&&cl&&bd){
+    op.addEventListener('click',ocOpen); cl.addEventListener('click',function(){ ocClose(true); }); bd.addEventListener('click',function(){ ocClose(true); });
+    oc.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ ocClose(false); }); });
+    document.addEventListener('keydown',function(e){
+      if(!oc.classList.contains('is-open')) return;
+      if(e.key==='Escape'){ ocClose(true); return; }
+      if(e.key==='Tab'){ /* keep focus inside the open menu */
+        var f=[].filter.call(oc.querySelectorAll('a,button'),function(x){ return x.offsetParent!==null; });
+        if(!f.length) return; var a=f[0], z=f[f.length-1];
+        if(e.shiftKey && document.activeElement===a){ e.preventDefault(); z.focus(); }
+        else if(!e.shiftKey && document.activeElement===z){ e.preventDefault(); a.focus(); }
+      }
+    });
+    window.addEventListener('resize',function(){ if(window.innerWidth>=992) ocClose(false); });
+  }
+
+  /* ---------- nav dropdown ---------- */
+  root.querySelectorAll('[data-gr-dd]').forEach(function(dd){
+    var b=dd.querySelector('.gr-dd__btn'), t=null;
+    function set(o){ dd.classList.toggle('is-open',o); b.setAttribute('aria-expanded',o?'true':'false'); }
+    b.addEventListener('click',function(){ set(!dd.classList.contains('is-open')); });
+    dd.addEventListener('pointerenter',function(e){ if(e.pointerType==='mouse'){ clearTimeout(t); set(true); } });
+    dd.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse'){ t=setTimeout(function(){ set(false); },140); } });
+    dd.addEventListener('focusout',function(){ setTimeout(function(){ if(!dd.contains(document.activeElement)) set(false); },0); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&dd.classList.contains('is-open')){ set(false); b.focus(); } });
+    document.addEventListener('click',function(e){ if(!dd.contains(e.target)) set(false); });
+  });
+
+  /* ---------- FAQ accordion ----------
+     Closed answers carry the hidden attribute, so their links are out of the tab order and screen readers skip them.
+     Opening removes it and slides the height open; closing slides to 0, then hides again. */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.querySelectorAll('.gr-acc').forEach(function(acc){
+    var q=acc.querySelector('.gr-acc__q'), a=acc.querySelector('.gr-acc__a'), t=null;
+    function done(){ clearTimeout(t); if(!acc.classList.contains('is-open')) a.hidden=true; else a.style.height='auto'; }
+    q.addEventListener('click',function(){
+      clearTimeout(t);
+      if(!acc.classList.contains('is-open')){
+        a.hidden=false; a.style.height='0px'; void a.offsetHeight;
+        acc.classList.add('is-open'); a.style.height=a.scrollHeight+'px'; q.setAttribute('aria-expanded','true');
+      } else {
+        a.style.height=a.scrollHeight+'px'; void a.offsetHeight; a.style.height='0px';
+        acc.classList.remove('is-open'); q.setAttribute('aria-expanded','false');
+      }
+      t=setTimeout(done,reduce?0:380);
+    });
+    a.addEventListener('transitionend',function(e){ if(e.propertyName==='height') done(); });
+  });
+
+  /* ---------- process steps: hover (desktop) or click, swap the UI scene ---------- */
+  root.querySelectorAll('[data-gr-steps]').forEach(function(wrap){
+    var steps=[].slice.call(wrap.querySelectorAll('.gr-step'));
+    var vis=wrap.parentElement.querySelector('[data-gr-stepvis]');
+    var scenes=vis?[].slice.call(vis.querySelectorAll('.gr-scene')):[];
+    var cur=0, fine=window.matchMedia('(hover:hover) and (min-width:992px)');
+    function reserve(){ /* keep the list height steady while steps open and close */
+      wrap.style.minHeight='';
+      var tops=0,maxB=0;
+      steps.forEach(function(s){ tops+=s.querySelector('.gr-step__top').offsetHeight+1; var b=s.querySelector('.gr-step__body'); maxB=Math.max(maxB,b.scrollHeight); });
+      wrap.style.minHeight=(tops+maxB)+'px';
+      var b0=steps[cur].querySelector('.gr-step__body'); if(b0.style.height!=='auto') b0.style.height=b0.scrollHeight+'px';
+    }
+    function setStep(i){
+      if(i===cur&&steps[i].classList.contains('is-active')) return;
+      steps.forEach(function(s,k){ var b=s.querySelector('.gr-step__body'),t=s.querySelector('.gr-step__top');
+        if(k===i){ s.classList.add('is-active'); b.style.height=b.scrollHeight+'px'; t.setAttribute('aria-expanded','true'); }
+        else { if(s.classList.contains('is-active')){ b.style.height=b.scrollHeight+'px'; void b.offsetHeight; } b.style.height='0px'; s.classList.remove('is-active'); t.setAttribute('aria-expanded','false'); } });
+      scenes.forEach(function(p,k){ p.classList.toggle('is-on',k===i); if(k===i) p.removeAttribute('aria-hidden'); else p.setAttribute('aria-hidden','true'); });
+      cur=i;
+    }
+    steps.forEach(function(s,i){
+      s.querySelector('.gr-step__top').addEventListener('click',function(){ setStep(i); });
+      s.addEventListener('pointerenter',function(e){ if(fine.matches&&e.pointerType==='mouse') setStep(i); });
+      s.querySelector('.gr-step__body').addEventListener('transitionend',function(e){ if(e.propertyName==='height'&&s.classList.contains('is-active')) this.style.height='auto'; });
+    });
+    steps[0].querySelector('.gr-step__body').style.height='auto';
+    reserve(); window.addEventListener('resize',reserve); window.addEventListener('load',reserve); root.addEventListener('gr:relayout',reserve);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(reserve);
+  });
+
+  /* ---------- UI scenes: scale each fixed width scene (.gr-fit) to fit its stage, like an image ---------- */
+  var fits=[].slice.call(root.querySelectorAll('[data-gr-fit]'));
+  function fitAll(){
+    fits.forEach(function(st){
+      var box=st.firstElementChild; if(!box) return;
+      var w=st.clientWidth, h=st.clientHeight, bw=box.offsetWidth, bh=box.offsetHeight;
+      if(!w||!h||!bw||!bh) return;
+      var f=window.innerWidth<576?.97:.92; /* phones: use nearly the full width so the scene's words stay readable */
+      st.style.setProperty('--k',Math.min(w*f/bw,h*.9/bh).toFixed(4));
+    });
+  }
+  if(fits.length){
+    fitAll();
+    if('ResizeObserver' in window){ var ro=new ResizeObserver(fitAll); fits.forEach(function(st){ ro.observe(st); ro.observe(st.firstElementChild); }); }
+    window.addEventListener('resize',fitAll); window.addEventListener('load',fitAll); root.addEventListener('gr:relayout',fitAll);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitAll);
+  }
+
+  /* ---------- floating WhatsApp button: after the first screen, and out of the way of the closing banner, the FAQ
+     list and the footer (it would sit on their buttons, chevrons and the copyright line) ---------- */
+  var fab=root.querySelector('.gr-fab');
+  if(fab){
+    var avoid=[].slice.call(root.querySelectorAll('.gr-faq__list,.gr-cta,.gr-footer')), btns=[].slice.call(root.querySelectorAll('.gr-main .gr-btn')), raf=0;
+    var fabTick=function(){
+      raf=0;
+      var vh=window.innerHeight, vw=document.documentElement.clientWidth, on=(window.scrollY||0)>vh*.6, zone=vh-96, i, r;
+      for(i=0;on&&i<avoid.length;i++){ r=avoid[i].getBoundingClientRect(); if(r.top<vh&&r.bottom>zone) on=false; }
+      for(i=0;on&&i<btns.length;i++){ r=btns[i].getBoundingClientRect(); if(r.width&&r.top<vh&&r.bottom>zone&&(root.dir==='rtl'?r.left<84:r.right>vw-84)) on=false; }
+      fab.classList.toggle('is-on',on);
+    };
+    var fabQueue=function(){ if(!raf) raf=requestAnimationFrame(fabTick); };
+    window.addEventListener('scroll',fabQueue,{passive:true}); window.addEventListener('resize',fabQueue); fabTick();
+  }
+
+  /* ---------- live working hours (Pakistan time, no daylight saving) ---------- */
+  var live=root.querySelectorAll('[data-gr-live]');
+  if(live.length&&window.GR&&GR.hours){
+    var H=GR.hours, o=H.open.split(':'), c=H.close.split(':');
+    var openM=(+o[0])*60+(+o[1]), closeM=(+c[0])*60+(+c[1]);
+    var tick=function(){
+      var pk=new Date(Date.now()+H.utc_offset_min*60000), d=pk.getUTCDay(), m=pk.getUTCHours()*60+pk.getUTCMinutes();
+      var open=H.days.indexOf(d)>-1&&m>=openM&&m<closeM;
+      live.forEach(function(el){ el.setAttribute('data-state',open?'open':'closed'); });
+    };
+    tick(); setInterval(tick,30000);
+  }
+
+  /* ---------- back to top ---------- */
+  root.querySelectorAll('[data-gr-top]').forEach(function(b){ b.addEventListener('click',function(e){
+    e.preventDefault(); window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var top=document.getElementById('top'); if(top){ if(!top.hasAttribute('tabindex')) top.setAttribute('tabindex','-1'); try{ top.focus({preventScroll:true}); }catch(x){ top.focus(); } }
+  }); });
+
+  /* ---------- language toggle (EN | اردو) ----------
+     English ships in the markup. Urdu sits in #gr-i18n as {ur:{dir,title,wa,font,s:{key:text}}} and is swapped in by
+     data-i18n / data-i18n-attr key. The English originals are read from the page once, so switching back needs no
+     second copy. The choice is remembered in localStorage ('gr-lang'); a link with ?lang=ur also selects it. */
+  try{ var src=document.getElementById('gr-i18n'); if(src) I18N=JSON.parse(src.textContent)||{}; }catch(e){ I18N={}; }
+  var textEls=root.querySelectorAll('[data-i18n]'), attrEls=root.querySelectorAll('[data-i18n-attr]'), waEls=root.querySelectorAll('a[data-wa]');
+  var langBtns=root.querySelectorAll('[data-set-lang]');
+  var BASE={title:document.title, wa:waEls.length?waEls[0].getAttribute('href'):'', text:[], attr:[]};
+  textEls.forEach(function(el,i){ BASE.text[i]=el.innerHTML; });
+  attrEls.forEach(function(el,i){ var o={}; el.getAttribute('data-i18n-attr').split(';').forEach(function(p){ var a=p.split(':')[0]; o[a]=el.getAttribute(a); }); BASE.attr[i]=o; });
+  function fmt(v){ /* same rule as the generator: escape, keep <b> <em> <strong> <br>, [[/path|text]] links */
+    return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/&lt;(\/?)(b|em|strong)&gt;/g,'<$1$2>').replace(/&lt;br&gt;/g,'<br>')
+      .replace(/\[\[(\/[a-z0-9\/#-]*|https:\/\/support\.google\.com\/[A-Za-z0-9\/._?=#-]*)\|([^\]|]+)\]\]/g,function(_,h,t){
+        return '<a class="gr-inlink" href="'+h+'"'+(h.charAt(0)==='/'?'':' target="_blank" rel="noopener"')+'>'+t+'</a>'; });
+  }
+  function anchor(){ /* keep the reader on the same block when the page height changes */
+    var y=Math.min(140,window.innerHeight/3), el=null, list=root.querySelectorAll('.gr-main>section,.gr-main>nav,.gr-footer');
+    for(var i=0;i<list.length;i++){ var r=list[i].getBoundingClientRect(); if(r.bottom>y){ el=list[i]; break; } }
+    if(!el||(window.scrollY||0)<10) return function(){};
+    var r0=el.getBoundingClientRect(), f=(y-r0.top)/Math.max(1,r0.height);
+    return function(){ var r1=el.getBoundingClientRect(); var d=(r1.top+f*r1.height)-y; if(Math.abs(d)>1) window.scrollTo({top:(window.scrollY||0)+d,behavior:'instant'}); };
+  }
+  function setLang(code){
+    var L=I18N[code]; if(code!=='en'&&!(L&&L.s)) code='en';
+    var d=code==='en'?null:L.s, dir=d?L.dir:'ltr';
+    textEls.forEach(function(el,i){ if(!d){ el.innerHTML=BASE.text[i]; return; } var v=d[el.getAttribute('data-i18n')]; if(v) el.innerHTML=fmt(v); });
+    attrEls.forEach(function(el,i){ el.getAttribute('data-i18n-attr').split(';').forEach(function(p){ var kv=p.split(':'), v=d?d[kv[1]]:BASE.attr[i][kv[0]]; if(v) el.setAttribute(kv[0],v); }); });
+    var wa=d?L.wa:BASE.wa; if(wa) waEls.forEach(function(a){ a.setAttribute('href',wa); });
+    root.setAttribute('lang',code); root.setAttribute('dir',dir); html.setAttribute('lang',code); html.setAttribute('dir',dir);
+    document.title=d?L.title:BASE.title;
+    langBtns.forEach(function(b){ b.setAttribute('aria-pressed',b.getAttribute('data-set-lang')===code?'true':'false'); });
+    LANG=code;
+    root.querySelectorAll('.gr-acc.is-open .gr-acc__a').forEach(function(a){ a.style.height='auto'; });
+    emit();
+  }
+  var cssReady=null;
+  function urduCss(){ /* the full Nastaliq stylesheet is not in the page head (English visitors never need it): add it once */
+    if(cssReady) return cssReady;
+    cssReady=new Promise(function(res){
+      var el=document.getElementById('gr-urdu-css');
+      if(!el){ if(!(window.GR&&GR.urduCss)) return res(); el=document.createElement('link'); el.id='gr-urdu-css'; el.rel='stylesheet'; el.href=GR.urduCss; document.head.appendChild(el); }
+      if(el.sheet) return res();
+      el.addEventListener('load',function(){ res(); }); el.addEventListener('error',function(){ res(); }); setTimeout(res,2000);
+    });
+    return cssReady;
+  }
+  function fontReady(code){ /* wait (max 1.2 s after the stylesheet) for the Urdu font so the switch lands in Nastaliq */
+    var L=I18N[code];
+    if(!L||!L.font) return Promise.resolve();
+    return urduCss().then(function(){
+      if(!document.fonts||!document.fonts.load) return;
+      var sample=(L.s['nav.contact']||'')+(L.s['cta.wa']||'');
+      var load=Promise.all([document.fonts.load('400 16px "'+L.font+'"',sample),document.fonts.load('700 16px "'+L.font+'"',sample)])['catch'](function(){});
+      return Promise.race([load,new Promise(function(r){ setTimeout(r,1200); })]);
+    });
+  }
+  function valid(code){ return code==='en'||!!(I18N[code]&&I18N[code].s); }
+  function remember(code){ if(!valid(code)) return; try{ localStorage.setItem('gr-lang',code); }catch(e){} }
+  function syncUrl(code){ /* a ?lang= left in the address bar must not override the visitor's new choice on reload */
+    try{
+      if(!/[?&]lang=/i.test(location.search)) return;
+      var u=new URL(location.href); u.searchParams['delete']('lang'); if(code!=='en') u.searchParams.set('lang',code);
+      history.replaceState(history.state,'',u.pathname+u.search+u.hash);
+    }catch(e){}
+  }
+  langBtns.forEach(function(b){
+    var code=b.getAttribute('data-set-lang');
+    ['pointerenter','focus','touchstart'].forEach(function(ev){ b.addEventListener(ev,function(){ fontReady(code); },{passive:true}); });
+    b.addEventListener('click',function(){
+      if(code===LANG) return;
+      remember(code); syncUrl(code);
+      root.classList.add('gr-switching');
+      var hold=new Promise(function(r){ setTimeout(r,170); });
+      Promise.all([fontReady(code),hold]).then(function(){
+        var keep=anchor(); setLang(code); keep();
+        requestAnimationFrame(function(){ root.classList.remove('gr-switching'); });
+        if(document.fonts&&document.fonts.ready) document.fonts.ready.then(emit);
+      });
+    });
+  });
+  function stored(){ var v=null; try{ v=localStorage.getItem('gr-lang'); }catch(e){} return valid(v)?v:'en'; }
+  var start='en', fromUrl=null;
+  try{ var m=/[?&]lang=([a-z]{2})(?:&|#|$)/i.exec(location.search); fromUrl=m?m[1].toLowerCase():null; }catch(e){}
+  if(fromUrl&&valid(fromUrl)){ start=fromUrl; remember(fromUrl); }
+  else start=stored();
+  /* back / forward cache: a restored page keeps the language it had; match the visitor's latest choice instead */
+  window.addEventListener('pageshow',function(e){
+    if(!e.persisted) return;
+    var s2=stored(); if(s2===LANG) return;
+    fontReady(s2).then(function(){ setLang(s2); });
+  });
+  if(start!=='en'&&I18N[start]){
+    setLang(start);
+    fontReady(start).then(function(){ html.classList.remove('gr-pending'); emit(); });
+  } else {
+    if(root.getAttribute('lang')!=='en') setLang('en');
+    html.classList.remove('gr-pending');
+  }
+})();
+</script>
+</body>
+</html>
